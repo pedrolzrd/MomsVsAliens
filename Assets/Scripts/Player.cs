@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+   private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(RespawnTimer());
         }
-    }
+    } 
 
     private void OnCollisionExit2D(Collision2D collision)
     {
