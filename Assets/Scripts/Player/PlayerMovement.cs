@@ -1,10 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private PlayerInput playerInput;
+
+    Vector2 move;
+
     Rigidbody2D rb;
 
     [SerializeField]
@@ -19,14 +21,22 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void Start()
+    {
+        playerInput = GetComponent<PlayerInput>();  
+    }
+
     private void Update()
     {
         Jump();
+
+        
+        
     }    
 
     private void FixedUpdate()
     {
-        Movement();
+        MoverPersonagemComVelocity();
 
         if (Input.GetAxisRaw("Horizontal") > 0 && !facingRight)
         {
@@ -54,15 +64,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Movement()
-    {
-        float move = Input.GetAxis("Horizontal");
-
-        rb.velocity = new Vector2(speed * move, rb.velocity.y);
-    }
     private void Jump()
     {
-        if (Input.GetButtonDown("Jump") && isJumping == false)
+        if (playerInput.actions["Jump"].triggered && isJumping == false)
         {
             rb.AddForce(new Vector2(rb.velocity.x, force));
         }
@@ -73,5 +77,12 @@ public class PlayerMovement : MonoBehaviour
         facingRight = !facingRight;
 
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    void MoverPersonagemComVelocity() // Move personagem usando velocity, interage com a física, ideal para projéteis.
+    {
+        Vector2 input = playerInput.actions["Move"].ReadValue<Vector2>();
+        move = input;
+        rb.velocity = new Vector2(input.x * speed, rb.velocity.y);
     }
 }
