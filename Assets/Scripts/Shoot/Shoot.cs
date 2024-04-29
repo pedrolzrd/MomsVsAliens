@@ -13,6 +13,7 @@ public class Shoot : MonoBehaviour
     private void Start()
     {
         _rb.velocity = transform.right * _speed;
+        Destroy(this.gameObject, 5f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
