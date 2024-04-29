@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8598449915513547615}
   - component: {fileID: 8598449915513547612}
   - component: {fileID: 8598449915513547613}
+  - component: {fileID: 7679310610462924191}
   m_Layer: 0
   m_Name: player 1
   m_TagString: Player
@@ -32,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 8598449915513547604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.6554, y: -3.49, z: 0}
-  m_LocalScale: {x: 0.5292112, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8598449916244912254}
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
   m_FlipX: 0
@@ -106,7 +107,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -150,8 +151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6063563fabf19846bbb8a440876f0ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  force: 300
+  playerInput: {fileID: 0}
+  speed: 12
+  force: 800
 --- !u!114 &8598449915513547615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +195,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
   startingHealth: 3
+--- !u!114 &7679310610462924191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8598449915513547604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 42fbcd26eb7ba034faf1c7c4998ce1c9, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Controls
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &8598449916244912249
 GameObject:
   m_ObjectHideFlags: 0
