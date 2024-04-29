@@ -16,14 +16,18 @@ public class PlayerShoot : MonoBehaviour
 
     void Update()
     {
-        if (Time.time >= nextShoot)
+        if(!PauseMenu.isPaused)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Time.time >= nextShoot)
             {
-                Shoot();
-                nextShoot = Time.time + 1f / fireRate;
+                if (Input.GetButtonDown("Fire3"))
+                {
+                    Shoot();
+                    nextShoot = Time.time + 1f / fireRate;
+                }
             }
         }
+        
     }
 
     void Shoot()

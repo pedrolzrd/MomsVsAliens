@@ -11,8 +11,8 @@ public class Controller : MonoBehaviour
         SceneManager.LoadScene("GameOver");
     }
 
-    public void Restart()
+    public void RestartAndPlay()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Selector");
     }
 }
