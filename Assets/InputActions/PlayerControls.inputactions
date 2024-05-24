@@ -7,12 +7,12 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "ff1c0442-1a04-4341-b82f-45219bfd8244",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Jump",
@@ -26,62 +26,18 @@
             ],
             "bindings": [
                 {
-                    "name": "Gamepad",
-                    "id": "05130172-0024-4378-93b3-1a34b49e8f97",
-                    "path": "2DVector",
+                    "name": "",
+                    "id": "4d37b2ce-fc9f-4393-aa16-5e551a4a0293",
+                    "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Move",
-                    "isComposite": true,
+                    "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
-                    "id": "22a4e575-c6e1-498c-adc0-1c4722b2dc50",
-                    "path": "<XInputController>/leftStick/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "XInput",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "70ce9139-5231-417e-908b-fc00d968b956",
-                    "path": "<XInputController>/leftStick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "XInput",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "cdba65b3-0411-4e1f-a927-6bb5c30ebe12",
-                    "path": "<XInputController>/leftStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "XInput",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "db512e0a-1917-43e3-bc02-8057bd1f113e",
-                    "path": "<XInputController>/leftStick/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "XInput",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "WASD",
+                    "name": "Keyboard",
                     "id": "2ae3161a-7cba-41e6-b77f-c6780ce3762e",
                     "path": "2DVector",
                     "interactions": "",
@@ -160,17 +116,5 @@
             ]
         }
     ],
-    "controlSchemes": [
-        {
-            "name": "XInput",
-            "bindingGroup": "XInput",
-            "devices": [
-                {
-                    "devicePath": "<XInputController>",
-                    "isOptional": true,
-                    "isOR": false
-                }
-            ]
-        }
-    ]
+    "controlSchemes": []
 }
