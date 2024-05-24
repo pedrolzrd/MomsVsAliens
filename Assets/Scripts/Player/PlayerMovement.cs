@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 move;
 
     Rigidbody2D rb;
+    Animator animator;
 
     [SerializeField]
     float speed;
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -53,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor"))
         {
             isJumping = false;
+            animator.SetBool("isJumping", false);
         }
     }
 
@@ -61,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor"))
         {
             isJumping = true;
+            animator.SetBool("isJumping", true);
         }
     }
 
@@ -84,5 +88,13 @@ public class PlayerMovement : MonoBehaviour
         Vector2 input = playerInput.actions["Move"].ReadValue<Vector2>();
         move = input;
         rb.velocity = new Vector2(input.x * speed, rb.velocity.y);
+        if(input.x != 0)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else if(input.x == 0)
+        {
+            animator.SetBool("isRunning", false);
+        }
     }
 }
