@@ -9,10 +9,16 @@ public class PlayerShoot : MonoBehaviour
     GameObject shoot;
     [SerializeField]
     Transform shootPoint;
+    Animator animator;
 
     [SerializeField]
     float fireRate;
     float nextShoot;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -24,6 +30,7 @@ public class PlayerShoot : MonoBehaviour
                 {
                     Shoot();
                     nextShoot = Time.time + 1f / fireRate;
+                    animator.SetTrigger("isShooting");
                 }
             }
         }

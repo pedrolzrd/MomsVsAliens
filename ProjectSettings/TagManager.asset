@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Enemy
+  - turnCol
   layers:
   - Default
   - TransparentFX
