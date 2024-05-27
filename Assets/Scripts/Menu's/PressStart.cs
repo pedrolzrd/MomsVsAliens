@@ -5,23 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PressStart : MonoBehaviour
 {
-public GameObject menuSelectPlayer;
-    void Start()
+    public void StartSelectorScene()
     {
-        
+        SceneManager.LoadScene("Selector");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
- public void OpenMenuSelectPlayer()
-    {
-        menuSelectPlayer.SetActive(true);
-    }
-
-
 }
