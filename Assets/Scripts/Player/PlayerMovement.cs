@@ -15,16 +15,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float force;
     bool isJumping;
-    bool facingRight = true;
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-    }
+    bool isFacingRight = true;
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();  
     }
 
@@ -32,22 +28,31 @@ public class PlayerMovement : MonoBehaviour
     {
         Jump();
 
-        
-        
+        if (move.x > 0 && !isFacingRight)
+        {
+            Flip();
+        }
+        else if (move.x < 0 && isFacingRight)
+        {
+            Flip();
+        }
+
+
+        if (Mathf.Abs(move.x) != 0)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else 
+        {
+            animator.SetBool("isRunning", false);
+        }
     }    
 
     private void FixedUpdate()
     {
         MoverPersonagemComVelocity();
 
-        if (Input.GetAxisRaw("Horizontal") > 0 && !facingRight)
-        {
-            Flip();
-        }
-        if (Input.GetAxisRaw("Horizontal") < 0 && facingRight)
-        {
-            Flip();
-        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -78,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Flip()
     {
-        facingRight = !facingRight;
+        isFacingRight = !isFacingRight;
 
         transform.Rotate(0f, 180f, 0f);
     }
@@ -88,13 +93,6 @@ public class PlayerMovement : MonoBehaviour
         Vector2 input = playerInput.actions["Move"].ReadValue<Vector2>();
         move = input;
         rb.velocity = new Vector2(input.x * speed, rb.velocity.y);
-        if(input.x != 0)
-        {
-            animator.SetBool("isRunning", true);
-        }
-        else if(input.x == 0)
-        {
-            animator.SetBool("isRunning", false);
-        }
+        
     }
 }
