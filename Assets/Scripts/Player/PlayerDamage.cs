@@ -16,14 +16,16 @@ public class PlayerDamage : MonoBehaviour
         health = GetComponent<Health>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy") && canTakeDamage == true)
         {
+            Debug.Log("Encostou no inimigo");
             health.TakeDamage(1);
             StartCoroutine(Damage());
         }
-    }
+    } */
+    
 
     IEnumerator Damage()
     {
