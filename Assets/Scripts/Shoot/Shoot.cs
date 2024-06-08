@@ -14,6 +14,8 @@ public class Shoot : MonoBehaviour
 
     public GameObject impactEffect; // IMPLEMENTAR
 
+    [SerializeField]public AudioSource impactSound;
+
     private void Start()
     {
         _rb.velocity = transform.right * _speed;
@@ -25,6 +27,7 @@ public class Shoot : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Instantiate(impactEffect, transform.position, transform.rotation);
+            impactSound.Play();
             Destroy(this.gameObject);
             Destroy(collision.gameObject);
         }
@@ -37,6 +40,7 @@ public class Shoot : MonoBehaviour
                 enemy.TakeDamage(damage);
             }
             Instantiate(impactEffect, transform.position, transform.rotation);
+            impactSound.Play();
             Destroy(gameObject);
         }
         
