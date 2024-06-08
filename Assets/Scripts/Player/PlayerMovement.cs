@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     Animator animator;
 
     [SerializeField]
-    float speed;
+    public float speed;
     [SerializeField]
     float force;
     bool isJumping;
@@ -77,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (playerInput.actions["Jump"].triggered && isJumping == false)
         {
+            
             rb.AddForce(new Vector2(rb.velocity.x, force));
         }
     }

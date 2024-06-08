@@ -6,12 +6,13 @@ public class EnemyWalk : MonoBehaviour
 {
     [SerializeField] 
     float spd;
-    bool facingRight;
+    bool facingRight = true;
 
     void Update()
     {
         Vector2 move = new Vector2(spd, 0); 
         transform.Translate(move * spd * Time.deltaTime);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -20,14 +21,14 @@ public class EnemyWalk : MonoBehaviour
         {
             if (facingRight)
             {
-                print("virou");
+                
                 facingRight = !facingRight;
                 transform.Rotate(0, 180f, 0);
                 spd *= -1;
             }
-            else
+            else if(facingRight == false)
             {
-                transform.Rotate(0, 0, 0);
+                transform.Rotate(0, 180f, 0);
                 spd *= -1;
             }
         }
