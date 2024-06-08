@@ -7,7 +7,7 @@ public class EnemyDamage : MonoBehaviour
     public Health playerHealth;
 
     public int damage = 1;
-    public AudioSource audioHurt;
+    
 
     void Start()
     {
@@ -27,7 +27,15 @@ public class EnemyDamage : MonoBehaviour
             playerHealth.TakeDamage(damage);
             Debug.Log("causou dano");
             
-            audioHurt.Play();
+            
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("chinelo"))
+        {
+
         }
     }
 }

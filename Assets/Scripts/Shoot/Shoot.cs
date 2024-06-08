@@ -10,6 +10,10 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     float _speed;
 
+    public int damage = 40;
+
+    public GameObject impactEffect; // IMPLEMENTAR
+
     private void Start()
     {
         _rb.velocity = transform.right * _speed;
@@ -20,8 +24,23 @@ public class Shoot : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(this.gameObject);
             Destroy(collision.gameObject);
         }
+
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            BossHealth enemy = collision.GetComponent<BossHealth>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+            Instantiate(impactEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+        
     }
+
+    
 }
