@@ -14,6 +14,8 @@ public class Health : MonoBehaviour
 
     bool canTakeDamage = true;
 
+    public AudioSource audioHurt;
+
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -32,6 +34,7 @@ public class Health : MonoBehaviour
         if(canTakeDamage)
         {
             currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
+            audioHurt.Play();
             StartCoroutine(DamageFlicker());
         }
         

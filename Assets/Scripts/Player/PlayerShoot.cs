@@ -3,11 +3,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerShoot : MonoBehaviour
 {
-    [SerializeField]
-    GameObject shoot;
-    [SerializeField]
-    Transform shootPoint;
+    [SerializeField] public GameObject shootEffect;
+
+    [SerializeField]GameObject shoot;
+    [SerializeField]Transform shootPoint;
     Animator animator;
+
+    [SerializeField]public AudioSource shootSound;
 
     [SerializeField]
     float fireRate;
@@ -37,7 +39,7 @@ public class PlayerShoot : MonoBehaviour
                     {
                         Shoot();
                         nextShoot = Time.time + 1f / fireRate;
-                        //animator.SetTrigger("isShooting");
+                        animator.SetTrigger("isShooting");
                     }
                 }
                 
@@ -49,6 +51,8 @@ public class PlayerShoot : MonoBehaviour
     void Shoot()
     {
         Instantiate(shoot, shootPoint.position, shootPoint.rotation);
+        shootSound.Play();
+        Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -57,6 +61,7 @@ public class PlayerShoot : MonoBehaviour
         {
             canShoot = true;
             animator.runtimeAnimatorController = newController;
+            animator = GetComponent<Animator>();
             Destroy(collision.gameObject);
         }
     }
