@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,11 +21,46 @@ public class PlayerShoot : MonoBehaviour
     public bool canShoot = false;
 
     public RuntimeAnimatorController newController;
-    
+
+    [SerializeField]private bool pointingUP = false;
+
+    //Point UP Logic
+    private InputAction UpAimAction;
+
     private void Start()
     {
         playerInput.GetComponent<PlayerInput>();
         animator = GetComponent<Animator>();
+    }
+
+    private void OnEnable()
+    {
+        UpAimAction = playerInput.actions["UpAim"];
+        UpAimAction.performed += OnButtonPressed;
+        UpAimAction.canceled += OnButtonReleased;
+        UpAimAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        UpAimAction.performed -= OnButtonPressed;
+        UpAimAction.canceled -= OnButtonReleased;
+        UpAimAction.Disable();
+    }
+
+    private void OnButtonPressed(InputAction.CallbackContext context)
+    {
+        if (canShoot)
+        {
+            animator.SetBool("upAim", true);
+            StartCoroutine(changeAimPositionUp());
+        }
+    }
+
+    private void OnButtonReleased(InputAction.CallbackContext context)
+    {
+        animator.SetBool("upAim", false);
+        StartCoroutine(changeAimPositionFront());
     }
 
     void Update()
@@ -45,7 +81,38 @@ public class PlayerShoot : MonoBehaviour
                 
             }
         }
-        
+
+        /*if (canShoot)
+        {
+            if (playerInput.Controls.UpAim.IsPress())
+            {
+                Debug.Log("registro do UPaim");
+                if (pointingUP == true)
+                {
+
+                }
+                else
+                {
+                    Debug.Log("Entrou no if do Change Position UP");
+                    animator.SetBool("upAim", true);
+                    StartCoroutine(changeAimPositionUp());
+                }
+            }
+            
+            //Mudar para mirar pra cima qunado segurar.
+
+            //Mudar para parar de mirar pra cima qunado parar de segurar
+            
+
+
+            if(playerInput.actions["Move"].triggered)
+            {
+                animator.SetBool("upAim", false);
+                StartCoroutine(changeAimPositionFront());
+            }
+        }*/
+       
+
     }
 
     void Shoot()
@@ -64,5 +131,26 @@ public class PlayerShoot : MonoBehaviour
             animator = GetComponent<Animator>();
             Destroy(collision.gameObject);
         }
+    }
+
+
+    public IEnumerator changeAimPositionUp()
+    {
+        Debug.Log("Entrou na Corrotina)");
+        shootPoint.Rotate(0f, 0f, 90f);
+        shootPoint.localPosition = new Vector3(-0.056f, 0.384f, 0);
+        pointingUP = true;
+        yield return null;
+    }
+
+    public IEnumerator changeAimPositionFront()
+    {
+        if (pointingUP == true)
+        {
+            shootPoint.Rotate(0f, 0f, -90f);
+            shootPoint.localPosition = new Vector3(0.265f, 0.144f, 0);
+            pointingUP = false;
+        }
+        yield return null;
     }
 }

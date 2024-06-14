@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 83f768d938af16548bf20f86dba33606
+guid: 5cf54f040d281f848a8e5effdb3faf6e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -114,43 +114,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: tvOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -165,85 +129,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jumper-idle_0
+      name: Idle_W_Gun_0
       rect:
         serializedVersion: 2
-        x: 7
+        x: 6
         y: 0
         width: 33
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 020a33298355821468b4784e9def7671
-      internalID: -1943774465
+      spriteID: aea624284e6c5f146b73e27c1e74d002
+      internalID: 676678521
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jumper-idle_1
+      name: Idle_W_Gun_1
       rect:
         serializedVersion: 2
-        x: 53
+        x: 86
         y: 0
-        width: 35
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 33
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79e982fcb3fe8254c94960d13f731b34
-      internalID: 439525167
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jumper-idle_2
-      rect:
-        serializedVersion: 2
-        x: 99
-        y: 0
-        width: 37
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f224760c4b9a454ea823a8ba752b2d6
-      internalID: -932921909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jumper-idle_3
-      rect:
-        serializedVersion: 2
-        x: 147
-        y: 0
-        width: 35
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 740ba05b458fa4340af1bdaa98cda74e
-      internalID: -1161650738
+      spriteID: 5a1884442d27480418b5276e28d38d40
+      internalID: -156777700
       vertices: []
       indices: 
       edges: []
@@ -252,17 +174,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      jumper-idle_0: -1943774465
-      jumper-idle_1: 439525167
-      jumper-idle_2: -932921909
-      jumper-idle_3: -1161650738
+      Idle_W_Gun_0: 676678521
+      Idle_W_Gun_1: -156777700
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
