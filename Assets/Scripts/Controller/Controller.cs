@@ -20,6 +20,6 @@ public class Controller : MonoBehaviour
 
     public void RestartAndPlay()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Game");
     }
 }
