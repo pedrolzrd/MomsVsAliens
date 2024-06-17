@@ -12,14 +12,11 @@ public class Shoot : MonoBehaviour
 
     public int damage = 40;
 
-    public GameObject impactEffect; // IMPLEMENTAR
-
-    [SerializeField]public AudioSource impactSound;
+    public GameObject impactEffect; 
 
     private void Start()
     {
         _rb.velocity = transform.right * _speed;
-        Destroy(this.gameObject, 5f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,7 +24,6 @@ public class Shoot : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Instantiate(impactEffect, transform.position, transform.rotation);
-            impactSound.Play();
             Destroy(this.gameObject);
             Destroy(collision.gameObject);
         }
@@ -40,7 +36,12 @@ public class Shoot : MonoBehaviour
                 enemy.TakeDamage(damage);
             }
             Instantiate(impactEffect, transform.position, transform.rotation);
-            impactSound.Play();
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
         

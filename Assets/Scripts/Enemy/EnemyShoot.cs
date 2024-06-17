@@ -1,22 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class EnemyShoot : MonoBehaviour
 {
     [SerializeField]
-    GameObject shoot;
+    GameObject projectile;
     [SerializeField]
-    GameObject shootpoint;
-    void Start()
+    Transform shootpoint;
+
+    private GameObject player;
+
+    private float timer;
+    public float playerRange = 4 ;
+    private void Start()
     {
-        StartCoroutine(Shoot());
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    IEnumerator Shoot()
+    void Update()
     {
-        Instantiate(shoot, shootpoint.transform.position, shootpoint.transform.rotation);
-        yield return new WaitForSeconds(2f);
-        StartCoroutine(Shoot());
+        
+
+        float distance = Vector2.Distance(transform.position, player.transform.position);
+        
+        if(distance < playerRange)
+        {
+            timer += Time.deltaTime;
+
+            if (timer > 2)
+            {
+                timer = 0;
+                Shoot();
+            }
+        }
+        
+    }
+
+    void Shoot()
+    {
+        Instantiate(projectile, shootpoint.position, Quaternion.identity);
     }
 }

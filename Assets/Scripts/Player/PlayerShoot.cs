@@ -53,14 +53,16 @@ public class PlayerShoot : MonoBehaviour
         if (canShoot)
         {
             animator.SetBool("upAim", true);
-            StartCoroutine(changeAimPositionUp());
+            //StartCoroutine(changeAimPositionUp());
+            ChangeAimPositionUp();
         }
     }
 
     private void OnButtonReleased(InputAction.CallbackContext context)
     {
         animator.SetBool("upAim", false);
-        StartCoroutine(changeAimPositionFront());
+        //StartCoroutine(changeAimPositionFront());
+        ChangeAimPositionFront();   
     }
 
     void Update()
@@ -136,7 +138,7 @@ public class PlayerShoot : MonoBehaviour
 
     public IEnumerator changeAimPositionUp()
     {
-        Debug.Log("Entrou na Corrotina)");
+
         shootPoint.Rotate(0f, 0f, 90f);
         shootPoint.localPosition = new Vector3(-0.056f, 0.384f, 0);
         pointingUP = true;
@@ -152,5 +154,25 @@ public class PlayerShoot : MonoBehaviour
             pointingUP = false;
         }
         yield return null;
+    }
+
+    public void ChangeAimPositionUp()
+    {
+
+        shootPoint.Rotate(0f, 0f, 90f);
+        shootPoint.localPosition = new Vector3(-0.056f, 0.384f, 0);
+        pointingUP = true;
+        
+    }
+
+    public void ChangeAimPositionFront()
+    {
+        if (pointingUP == true)
+        {
+            shootPoint.Rotate(0f, 0f, -90f);
+            shootPoint.localPosition = new Vector3(0.265f, 0.144f, 0);
+            pointingUP = false;
+        }
+       
     }
 }
