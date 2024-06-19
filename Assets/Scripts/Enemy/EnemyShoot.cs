@@ -12,6 +12,8 @@ public class EnemyShoot : MonoBehaviour
 
     private GameObject player;
 
+    [SerializeField] float enemyRateOfFire = 2 ;
+
     private float timer;
     public float playerRange = 4 ;
     private void Start()
@@ -29,7 +31,7 @@ public class EnemyShoot : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if (timer > 2)
+            if (timer > enemyRateOfFire)
             {
                 timer = 0;
                 Shoot();

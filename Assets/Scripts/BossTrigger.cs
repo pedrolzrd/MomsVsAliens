@@ -5,12 +5,13 @@ using Cinemachine;
 
 public class BossTrigger : MonoBehaviour
 {
-    GameObject boss;
-    Animator bossAnimator;
+    [SerializeField]GameObject boss;
+    [SerializeField]Animator bossAnimator;
 
     [SerializeField]public VirtualCam cam;
 
-    Vector3 bossPosition = new Vector3(253.5f, 10.11f, -10f);
+    [SerializeField]public Vector3 bossPosition = new Vector3(253.5f, 10.11f, -10f);
+
 
     [SerializeField] AudioSource bossMusic;
     [SerializeField] AudioSource levelMusic;
@@ -22,8 +23,8 @@ public class BossTrigger : MonoBehaviour
 
     void Start()
     {
-        boss = GameObject.FindGameObjectWithTag("Boss");
-        bossAnimator = boss.GetComponent<Animator>();
+        //boss = GameObject.FindGameObjectWithTag("Boss");
+        //bossAnimator = boss.GetComponent<Animator>();
         
         
     }

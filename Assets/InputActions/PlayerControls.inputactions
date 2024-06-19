@@ -1,5 +1,5 @@
 {
-    "name": "PlayerControls 1",
+    "name": "PlayerControls",
     "maps": [
         {
             "name": "Controls",
@@ -66,28 +66,6 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
-                    "id": "bb6a9ad9-dda6-4162-a09b-f6ce566ce9dc",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "d4fe8bbd-7786-4f29-8301-8c66b39b5b68",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "left",
                     "id": "e52be582-3ee2-41f2-af42-0c393dc4a8c6",
                     "path": "<Keyboard>/a",
@@ -121,28 +99,6 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
-                    "id": "4048b88f-f869-4ae0-aa88-69ecde7e1807",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "070ecc06-562d-4bbd-9d89-d4471f781c4c",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "left",
                     "id": "dda7d6ca-1e32-495d-94a3-58a2eac6cf82",
                     "path": "<Keyboard>/leftArrow",
@@ -157,6 +113,39 @@
                     "name": "right",
                     "id": "080f5a45-a746-4f00-8d68-942a85aeeb0f",
                     "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Gamepad D-Pad",
+                    "id": "91b54623-fa07-4d6e-928a-daace5fe86c1",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "left",
+                    "id": "78fc4695-9fae-4118-9c8b-192d8ec5484d",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "977c7ccc-6517-4e33-bb10-006fe1405c55",
+                    "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -234,6 +223,17 @@
                     "name": "",
                     "id": "23e5cf79-97d5-42e6-93d9-de544b5ce614",
                     "path": "<Gamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UpAim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd2a7d57-40ec-4e9e-b0f1-be3061b9b152",
+                    "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
