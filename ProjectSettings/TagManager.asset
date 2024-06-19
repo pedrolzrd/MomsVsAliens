@@ -13,6 +13,8 @@ TagManager:
   - chinelo
   - Boss
   - Camera
+  - FinalBoss
+  - tupperware
   layers:
   - Default
   - TransparentFX

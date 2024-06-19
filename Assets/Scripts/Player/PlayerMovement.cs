@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     public float speed;
     [SerializeField]
-    float force;
+    public float force;
     bool isJumping;
     bool isFacingRight = true;
 

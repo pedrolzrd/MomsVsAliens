@@ -12,9 +12,15 @@ public class Health : MonoBehaviour
     [SerializeField] float startingHealth;
     [SerializeField] public float currentHealth { get; private set; }
 
+    [SerializeField] public float maxHealth = 5; 
+
     bool canTakeDamage = true;
 
     public AudioSource audioHurt;
+
+    public AudioSource audioHeal;
+
+  
 
     private void Awake()
     {
@@ -36,6 +42,17 @@ public class Health : MonoBehaviour
             currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
             audioHurt.Play();
             StartCoroutine(DamageFlicker());
+        }
+        
+    }
+
+    public void RecoverLife(float heal)
+    {
+        if(currentHealth < maxHealth)
+        {
+            currentHealth = currentHealth + heal;
+            audioHeal.Play();
+            
         }
         
     }

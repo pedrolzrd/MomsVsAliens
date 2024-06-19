@@ -12,8 +12,8 @@ public class Shoot : MonoBehaviour
 
     public int damage = 40;
 
-    public GameObject impactEffect; 
-
+    public GameObject impactEffect;
+    public GameObject enemyDeathEffect;
     private void Start()
     {
         _rb.velocity = transform.right * _speed;
@@ -24,6 +24,7 @@ public class Shoot : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Instantiate(impactEffect, transform.position, transform.rotation);
+            Instantiate(enemyDeathEffect, collision.transform.position, collision.transform.rotation);  
             Destroy(this.gameObject);
             Destroy(collision.gameObject);
         }
@@ -37,7 +38,22 @@ public class Shoot : MonoBehaviour
             }
             Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(gameObject);
+
+           
+
         }
+
+        if (collision.gameObject.CompareTag("FinalBoss"))
+        {
+            FinalBoss enemy = collision.GetComponent<FinalBoss>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+            Instantiate(impactEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+
 
         if (collision.gameObject.CompareTag("Floor"))
         {
