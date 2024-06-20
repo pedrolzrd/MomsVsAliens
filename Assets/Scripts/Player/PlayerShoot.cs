@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.SceneManagement;
 public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] public GameObject shootEffect;
@@ -82,6 +82,12 @@ public class PlayerShoot : MonoBehaviour
                 }
                 
             }
+        }
+
+        if (playerInput.actions["correctAim"].triggered)
+        {
+            Debug.Log("Correct Aim Ativado");
+            CorrectAim();
         }
 
         /*if (canShoot)
@@ -175,4 +181,10 @@ public class PlayerShoot : MonoBehaviour
         }
        
     }
+
+    public void CorrectAim()
+    {
+        SceneManager.LoadScene("Game");
+    }
+
 }
