@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
-            //isJumping = true;
+            isJumping = true;
             animator.SetBool("isJumping", true);
         }
     }
