@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     [SerializeField]
     public float force;
-    bool isJumping;
+    public bool isJumping;
     bool isFacingRight = true;
 
     private void Start()
@@ -50,9 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MoverPersonagemComVelocity();
-
-        
+        MoverPersonagemComVelocity();        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -68,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
-            isJumping = true;
+            //isJumping = true;
             animator.SetBool("isJumping", true);
         }
     }
