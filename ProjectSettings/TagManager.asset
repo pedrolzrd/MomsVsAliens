@@ -15,6 +15,7 @@ TagManager:
   - Camera
   - FinalBoss
   - tupperware
+  - resPoint
   layers:
   - Default
   - TransparentFX

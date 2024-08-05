@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
     [SerializeField] float startingHealth;
     [SerializeField] public float currentHealth { get; private set; }
 
-    [SerializeField] public float maxHealth = 5; 
+    [SerializeField] public float maxHealth = 5;
 
     bool canTakeDamage = true;
 
@@ -33,6 +33,11 @@ public class Health : MonoBehaviour
         {
             controller.GameOver();
         }
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            TakeDamage(1);
+        }
     }
 
     public void TakeDamage(float damage)
@@ -40,7 +45,7 @@ public class Health : MonoBehaviour
         if(canTakeDamage)
         {
             currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
-            audioHurt.Play();
+            audioHurt.Play();            
             StartCoroutine(DamageFlicker());
         }
         
