@@ -144,11 +144,17 @@ public class PlayerShoot : MonoBehaviour
 
     public IEnumerator changeAimPositionUp()
     {
-
-        shootPoint.Rotate(0f, 0f, 90f);
-        shootPoint.localPosition = new Vector3(-0.056f, 0.384f, 0);
-        pointingUP = true;
-        yield return null;
+        if(pointingUP == true)
+        {
+            yield return null;
+        } else
+        {
+            shootPoint.Rotate(0f, 0f, 90f);
+            shootPoint.localPosition = new Vector3(-0.056f, 0.384f, 0);
+            pointingUP = true;
+            yield return null;
+        }
+        
     }
 
     public IEnumerator changeAimPositionFront()
