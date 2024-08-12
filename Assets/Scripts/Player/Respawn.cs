@@ -4,25 +4,30 @@ using UnityEngine;
 
 public class Respawn : MonoBehaviour
 {
-    public GameObject respawnPoint { get; private set; }
+    public Transform respawnPoint; //{ get; private set; }
     Health health;
     [SerializeField] Transform playerTransform;
 
     private void Start()
     {
-        health = GetComponent<Health>();
+        health = GetComponent<Health>();   
+        playerTransform = GetComponent<Transform>();
     }
 
     private void Update()
     {
-        print(respawnPoint);        
+        print(respawnPoint);
+        if (Input.GetKeyDown(KeyCode.R))
+        {            
+            playerTransform.position = respawnPoint.position;
+        } 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("resPoint"))
         {
-            respawnPoint = collision.gameObject;
+            respawnPoint = collision.gameObject.transform;
         }
     }
 }

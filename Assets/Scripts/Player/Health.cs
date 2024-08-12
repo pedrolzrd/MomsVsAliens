@@ -47,8 +47,7 @@ public class Health : MonoBehaviour
             currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
             audioHurt.Play();            
             StartCoroutine(DamageFlicker());
-        }
-        
+        }        
     }
 
     public void RecoverLife(float heal)
