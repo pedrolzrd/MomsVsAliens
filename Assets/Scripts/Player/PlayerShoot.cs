@@ -67,6 +67,8 @@ public class PlayerShoot : MonoBehaviour
 
     void Update()
     {
+
+        Debug.Log(shootPoint.localRotation);
         if(!PauseMenu.isPaused)
         {
             if (Time.time >= nextShoot)
@@ -144,18 +146,25 @@ public class PlayerShoot : MonoBehaviour
 
     public IEnumerator changeAimPositionUp()
     {
+        if(pointingUP == true)
+        {
+            yield return null;
 
-        shootPoint.Rotate(0f, 0f, 90f);
-        shootPoint.localPosition = new Vector3(-0.056f, 0.384f, 0);
-        pointingUP = true;
-        yield return null;
+        } else
+        {
+            shootPoint.localRotation = Quaternion.Euler(0f, 0f, 90f);
+            shootPoint.localPosition = new Vector3(-0.056f, 0.384f, 0);
+            pointingUP = true;
+            yield return null;
+        }
+        
     }
 
     public IEnumerator changeAimPositionFront()
     {
         if (pointingUP == true)
         {
-            shootPoint.Rotate(0f, 0f, -90f);
+            shootPoint.localRotation = Quaternion.Euler(0f, 0f, 0f);
             shootPoint.localPosition = new Vector3(0.265f, 0.144f, 0);
             pointingUP = false;
         }
@@ -165,7 +174,7 @@ public class PlayerShoot : MonoBehaviour
     public void ChangeAimPositionUp()
     {
 
-        shootPoint.Rotate(0f, 0f, 90f);
+        shootPoint.localRotation = Quaternion.Euler(0f, 0f, 90f);
         shootPoint.localPosition = new Vector3(-0.056f, 0.384f, 0);
         pointingUP = true;
         
@@ -175,7 +184,7 @@ public class PlayerShoot : MonoBehaviour
     {
         if (pointingUP == true)
         {
-            shootPoint.Rotate(0f, 0f, -90f);
+            shootPoint.localRotation = Quaternion.Euler(0f, 0f, 0f);
             shootPoint.localPosition = new Vector3(0.265f, 0.144f, 0);
             pointingUP = false;
         }

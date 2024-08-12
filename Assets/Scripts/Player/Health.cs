@@ -5,26 +5,27 @@ public class Health : MonoBehaviour
 {
     public SpriteRenderer[] sprites;
     public int flickerAmnt;
-    public float flickerDuration;
+    public float hpflickerDuration;
+    public float satflickerDuration;
 
+    [SerializeField] float dmg;
     [SerializeField] Controller controller;
-
     [SerializeField] float startingHealth;
-    [SerializeField] public float currentHealth { get; private set; }
+    [SerializeField] public float startingHealthSaturation;
 
-    [SerializeField] public float maxHealth = 5;
+    public float healthSaturation { get; private set; }
+    [SerializeField] public float currentHealth { get; private set; }
+    [SerializeField] public float maxHealth = 5; 
 
     bool canTakeDamage = true;
 
     public AudioSource audioHurt;
-
-    public AudioSource audioHeal;
-
-  
+    public AudioSource audioHeal;  
 
     private void Awake()
     {
         currentHealth = startingHealth;
+        healthSaturation = startingHealthSaturation;
     }
 
     private void Update()
@@ -34,7 +35,15 @@ public class Health : MonoBehaviour
             controller.GameOver();
         }
 
-        if(Input.GetKeyDown(KeyCode.E))
+        if(healthSaturation <= 0)
+        {
+            healthSaturation = startingHealthSaturation;
+            currentHealth = Mathf.Clamp(currentHealth - dmg, 0, startingHealth);
+            audioHurt.Play();
+            StartCoroutine(DamageFlicker(hpflickerDuration));
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
         {
             TakeDamage(1);
         }
@@ -44,9 +53,12 @@ public class Health : MonoBehaviour
     {
         if(canTakeDamage)
         {
-            currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
-            audioHurt.Play();            
-            StartCoroutine(DamageFlicker());
+            healthSaturation -= damage;
+            audioHurt.Play();
+            if(healthSaturation >= 1)
+            {
+                StartCoroutine(DamageFlicker(satflickerDuration));
+            }            
         }        
     }
 
@@ -55,13 +67,11 @@ public class Health : MonoBehaviour
         if(currentHealth < maxHealth)
         {
             currentHealth = currentHealth + heal;
-            audioHeal.Play();
-            
-        }
-        
+            audioHeal.Play();            
+        }        
     }
 
-    IEnumerator DamageFlicker()
+    IEnumerator DamageFlicker(float flickerDuration)
     {
         canTakeDamage = false;
         for(int i = 0; i < flickerAmnt; i++)
@@ -77,8 +87,6 @@ public class Health : MonoBehaviour
             }
             yield return new WaitForSeconds(flickerDuration);
             canTakeDamage = true;
-
         }
     }
-
 }
