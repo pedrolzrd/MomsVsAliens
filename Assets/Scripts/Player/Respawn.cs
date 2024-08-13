@@ -30,4 +30,9 @@ public class Respawn : MonoBehaviour
             respawnPoint = collision.gameObject.transform;
         }
     }
+
+    public void RespawnPlayer()
+    {
+        playerTransform.position = respawnPoint.position;
+    }
 }

@@ -66,9 +66,7 @@ public class PlayerShoot : MonoBehaviour
     }
 
     void Update()
-    {
-
-        Debug.Log(shootPoint.localRotation);
+    {        
         if(!PauseMenu.isPaused)
         {
             if (Time.time >= nextShoot)

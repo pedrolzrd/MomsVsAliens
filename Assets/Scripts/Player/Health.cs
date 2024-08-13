@@ -20,12 +20,15 @@ public class Health : MonoBehaviour
     bool canTakeDamage = true;
 
     public AudioSource audioHurt;
-    public AudioSource audioHeal;  
+    public AudioSource audioHeal;
+
+    Respawn respawn;
 
     private void Awake()
     {
         currentHealth = startingHealth;
         healthSaturation = startingHealthSaturation;
+        respawn = GetComponent<Respawn>();
     }
 
     private void Update()
@@ -41,6 +44,7 @@ public class Health : MonoBehaviour
             currentHealth = Mathf.Clamp(currentHealth - dmg, 0, startingHealth);
             audioHurt.Play();
             StartCoroutine(DamageFlicker(hpflickerDuration));
+            respawn.RespawnPlayer();
         }
 
         if (Input.GetKeyDown(KeyCode.E))
