@@ -7,7 +7,7 @@ public class PlayerDamage : MonoBehaviour
     Rigidbody2D rb;
     Health health;
 
-    bool canTakeDamage = true;
+    //bool canTakeDamage = true;
 
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class PlayerDamage : MonoBehaviour
 
     IEnumerator Damage()
     {
-        canTakeDamage = false;
+        //canTakeDamage = false;
         sr.enabled = false;
         yield return new WaitForSeconds(0.2f);
         sr.enabled = true;
@@ -61,6 +61,6 @@ public class PlayerDamage : MonoBehaviour
         sr.enabled = false;
         yield return new WaitForSeconds(0.2f);
         sr.enabled = true;
-        canTakeDamage = true;
+        //canTakeDamage = true;
     }
 }

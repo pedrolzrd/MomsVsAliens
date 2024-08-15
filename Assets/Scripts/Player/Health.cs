@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public SpriteRenderer[] sprites;
-    public int flickerAmnt;
-    public float hpflickerDuration;
-    public float satflickerDuration;
+    [SerializeField] SpriteRenderer[] sprites;
+    [SerializeField] int hpFlickerAmnt;
+    [SerializeField] int satFlickerAmnt;
+    [SerializeField] float flickerDuration;
 
     [SerializeField] float dmg;
     [SerializeField] Controller controller;
@@ -20,12 +20,15 @@ public class Health : MonoBehaviour
     bool canTakeDamage = true;
 
     public AudioSource audioHurt;
-    public AudioSource audioHeal;  
+    public AudioSource audioHeal;
+
+    Respawn respawn;
 
     private void Awake()
     {
         currentHealth = startingHealth;
         healthSaturation = startingHealthSaturation;
+        respawn = GetComponent<Respawn>();
     }
 
     private void Update()
@@ -35,12 +38,13 @@ public class Health : MonoBehaviour
             controller.GameOver();
         }
 
-        if(healthSaturation <= 0)
+        if(healthSaturation < 0)
         {
             healthSaturation = startingHealthSaturation;
             currentHealth = Mathf.Clamp(currentHealth - dmg, 0, startingHealth);
             audioHurt.Play();
-            StartCoroutine(DamageFlicker(hpflickerDuration));
+            StartCoroutine(DamageFlicker(flickerDuration, hpFlickerAmnt));
+            respawn.RespawnPlayer();
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -57,7 +61,7 @@ public class Health : MonoBehaviour
             audioHurt.Play();
             if(healthSaturation >= 1)
             {
-                StartCoroutine(DamageFlicker(satflickerDuration));
+                StartCoroutine(DamageFlicker(flickerDuration, satFlickerAmnt));
             }            
         }        
     }
@@ -71,7 +75,7 @@ public class Health : MonoBehaviour
         }        
     }
 
-    IEnumerator DamageFlicker(float flickerDuration)
+    IEnumerator DamageFlicker(float flickerDuration, float flickerAmnt)
     {
         canTakeDamage = false;
         for(int i = 0; i < flickerAmnt; i++)
