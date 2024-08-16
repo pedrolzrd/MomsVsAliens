@@ -40,6 +40,7 @@ public class Health : MonoBehaviour
 
         if(healthSaturation < 0)
         {
+            
             healthSaturation = startingHealthSaturation;
             currentHealth = Mathf.Clamp(currentHealth - dmg, 0, startingHealth);
             audioHurt.Play();
