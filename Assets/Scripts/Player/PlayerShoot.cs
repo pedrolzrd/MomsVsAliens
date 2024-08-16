@@ -11,7 +11,6 @@ public class PlayerShoot : MonoBehaviour
     Animator animator;
 
     [SerializeField]public AudioSource shootSound;
-    [SerializeField] public AudioSource gunPickUpSound;
 
     [SerializeField]
     float fireRate;
@@ -136,7 +135,6 @@ public class PlayerShoot : MonoBehaviour
         if (collision.CompareTag("Weapon"))
         {
             canShoot = true;
-            gunPickUpSound.Play();
             animator.runtimeAnimatorController = newController;
             animator = GetComponent<Animator>();
             Destroy(collision.gameObject);
