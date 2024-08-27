@@ -8,6 +8,7 @@ public class PlayerShoot : MonoBehaviour
 
     [SerializeField]GameObject shoot;
     [SerializeField]Transform shootPoint;
+    [SerializeField] GameObject special;
     Animator animator;
 
     [SerializeField]public AudioSource shootSound;
@@ -79,6 +80,11 @@ public class PlayerShoot : MonoBehaviour
                         nextShoot = Time.time + 1f / fireRate;
                         animator.SetTrigger("isShooting");
                     }
+                    if (Input.GetKeyDown(KeyCode.P))
+                    {
+                        ShootSpecial();
+                        animator.SetTrigger("isShooting");
+                    }
                 }
                 
             }
@@ -128,6 +134,12 @@ public class PlayerShoot : MonoBehaviour
         Instantiate(shoot, shootPoint.position, shootPoint.rotation);
         shootSound.Play();
         Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
+    }
+
+    void ShootSpecial()
+    {
+        Instantiate(special, shootPoint.position, shootPoint.rotation);
+        shootSound.Play();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
