@@ -19,7 +19,7 @@ public class Tupperware : MonoBehaviour
     
     void Update()
     {
-        scoreText.text = score.ToString();
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -16,7 +16,7 @@ public class Respawn : MonoBehaviour
 
     private void Update()
     {
-        print(respawnPoint);
+        
         if (Input.GetKeyDown(KeyCode.R))
         {            
             playerTransform.position = respawnPoint.position;

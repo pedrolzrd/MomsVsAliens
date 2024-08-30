@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CaveTrigger : MonoBehaviour
 {
-    [SerializeField] VirtualCam mCam;
+    [SerializeField] GameObject levelCam;
+    [SerializeField] GameObject caveCam;
     [SerializeField] AudioSource LevelMusic;
     [SerializeField] AudioSource CaveMusic;
 
@@ -26,6 +27,9 @@ public class CaveTrigger : MonoBehaviour
             LevelMusic.Stop();  
             CaveMusic.Play();
             //Trocar Camera Confiner _se possível.
+
+            levelCam.SetActive(false);
+            caveCam.SetActive(true);
 
         }
     }

@@ -16,6 +16,8 @@ TagManager:
   - FinalBoss
   - tupperware
   - resPoint
+  - FollowTrigger
+  - Wave_Enemy
   layers:
   - Default
   - TransparentFX
