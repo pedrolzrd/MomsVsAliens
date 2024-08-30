@@ -12,7 +12,7 @@ public class Special : MonoBehaviour
     [SerializeField]
     float _speed;
 
-    public int damage = 40;
+    public int damage = 100;
 
     public GameObject enemyDeathEffect;
     private void Start()
@@ -26,7 +26,6 @@ public class Special : MonoBehaviour
         {
             _animator.SetTrigger("Hit");
             Instantiate(enemyDeathEffect, collision.transform.position, collision.transform.rotation);
-            Destroy(this.gameObject);
             Destroy(collision.gameObject);
         }
 
