@@ -6,15 +6,19 @@ public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] public GameObject shootEffect;
 
-    [SerializeField]GameObject shoot;
-    [SerializeField]Transform shootPoint;
+    [SerializeField] GameObject shoot;
+    [SerializeField] Transform shootPoint;
+    [SerializeField] GameObject special;
     Animator animator;
+    Tupperware tupperware;
 
-    [SerializeField]public AudioSource shootSound;
+    [SerializeField] public AudioSource shootSound;
 
     [SerializeField]
     float fireRate;
     float nextShoot;
+    [SerializeField]
+    int scoreQuantity;
 
     [SerializeField] public PlayerInput playerInput;
 
@@ -31,6 +35,7 @@ public class PlayerShoot : MonoBehaviour
     {
         playerInput.GetComponent<PlayerInput>();
         animator = GetComponent<Animator>();
+        tupperware = GetComponent<Tupperware>();
     }
 
     private void OnEnable()
@@ -78,6 +83,12 @@ public class PlayerShoot : MonoBehaviour
                         Shoot();
                         nextShoot = Time.time + 1f / fireRate;
                         animator.SetTrigger("isShooting");
+                    }
+                    if (tupperware.score >= scoreQuantity && Input.GetKeyDown(KeyCode.P))
+                    {
+                        ShootSpecial();
+                        animator.SetTrigger("isShooting");
+                        tupperware.score -= scoreQuantity;
                     }
                 }
                 
@@ -128,6 +139,12 @@ public class PlayerShoot : MonoBehaviour
         Instantiate(shoot, shootPoint.position, shootPoint.rotation);
         shootSound.Play();
         Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
+    }
+
+    void ShootSpecial()
+    {
+        Instantiate(special, shootPoint.position, shootPoint.rotation);
+        shootSound.Play();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
