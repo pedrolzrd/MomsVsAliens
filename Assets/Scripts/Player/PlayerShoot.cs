@@ -11,6 +11,7 @@ public class PlayerShoot : MonoBehaviour
     Animator animator;
 
     [SerializeField]public AudioSource shootSound;
+    [SerializeField]public AudioSource weaponCollectSound;
 
     [SerializeField]
     float fireRate;
@@ -53,7 +54,6 @@ public class PlayerShoot : MonoBehaviour
         if (canShoot)
         {
             animator.SetBool("upAim", true);
-            //StartCoroutine(changeAimPositionUp());
             ChangeAimPositionUp();
         }
     }
@@ -61,7 +61,6 @@ public class PlayerShoot : MonoBehaviour
     private void OnButtonReleased(InputAction.CallbackContext context)
     {
         animator.SetBool("upAim", false);
-        //StartCoroutine(changeAimPositionFront());
         ChangeAimPositionFront();   
     }
 
@@ -80,47 +79,8 @@ public class PlayerShoot : MonoBehaviour
                         animator.SetTrigger("isShooting");
                     }
                 }
-                
             }
         }
-
-        if (playerInput.actions["correctAim"].triggered)
-        {
-            Debug.Log("Correct Aim Ativado");
-            CorrectAim();
-        }
-
-        /*if (canShoot)
-        {
-            if (playerInput.Controls.UpAim.IsPress())
-            {
-                Debug.Log("registro do UPaim");
-                if (pointingUP == true)
-                {
-
-                }
-                else
-                {
-                    Debug.Log("Entrou no if do Change Position UP");
-                    animator.SetBool("upAim", true);
-                    StartCoroutine(changeAimPositionUp());
-                }
-            }
-            
-            //Mudar para mirar pra cima qunado segurar.
-
-            //Mudar para parar de mirar pra cima qunado parar de segurar
-            
-
-
-            if(playerInput.actions["Move"].triggered)
-            {
-                animator.SetBool("upAim", false);
-                StartCoroutine(changeAimPositionFront());
-            }
-        }*/
-       
-
     }
 
     void Shoot()
@@ -134,13 +94,14 @@ public class PlayerShoot : MonoBehaviour
     {
         if (collision.CompareTag("Weapon"))
         {
+            weaponCollectSound.Play();
             canShoot = true;
             animator.runtimeAnimatorController = newController;
             animator = GetComponent<Animator>();
+            
             Destroy(collision.gameObject);
         }
     }
-
 
     public IEnumerator changeAimPositionUp()
     {
@@ -155,7 +116,6 @@ public class PlayerShoot : MonoBehaviour
             pointingUP = true;
             yield return null;
         }
-        
     }
 
     public IEnumerator changeAimPositionFront()
@@ -171,11 +131,9 @@ public class PlayerShoot : MonoBehaviour
 
     public void ChangeAimPositionUp()
     {
-
         shootPoint.localRotation = Quaternion.Euler(0f, 0f, 90f);
         shootPoint.localPosition = new Vector3(-0.056f, 0.384f, 0);
         pointingUP = true;
-        
     }
 
     public void ChangeAimPositionFront()
@@ -186,12 +144,5 @@ public class PlayerShoot : MonoBehaviour
             shootPoint.localPosition = new Vector3(0.265f, 0.144f, 0);
             pointingUP = false;
         }
-       
     }
-
-    public void CorrectAim()
-    {
-        SceneManager.LoadScene("Game");
-    }
-
 }

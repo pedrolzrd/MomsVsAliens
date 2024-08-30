@@ -29,6 +29,14 @@ public class Shoot : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+        if (collision.gameObject.CompareTag("Wave_Enemy"))
+        {
+            Instantiate(impactEffect, transform.position, transform.rotation);
+            Instantiate(enemyDeathEffect, collision.transform.position, collision.transform.rotation);
+            Destroy(this.gameObject);
+            Destroy(collision.gameObject);
+        }
+
         if (collision.gameObject.CompareTag("Boss"))
         {
             BossHealth enemy = collision.GetComponent<BossHealth>();

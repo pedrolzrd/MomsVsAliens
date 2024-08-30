@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    public Health playerHealth;
+    private Health playerHealth;
 
     public int damage = 1;
-    
 
-    void Start()
+    private void Awake()
     {
-        
-    }
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
 
+    }
 
     void Update()
     {
