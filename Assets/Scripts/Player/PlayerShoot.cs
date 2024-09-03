@@ -23,7 +23,7 @@ public class PlayerShoot : MonoBehaviour
     public float fireRate; 
     float nextShoot;
     [SerializeField]
-    int scoreQuantity;
+    int scoreQuantity;    
 
     [SerializeField] public PlayerInput playerInput;
 
@@ -93,7 +93,7 @@ public class PlayerShoot : MonoBehaviour
                     if (playerInput.actions["Fire"].triggered && ammoMetralhadora <= 0)
                     {
                         Shoot();
-                        nextShoot = Time.time + 1f / fireRate;
+                        nextShoot = Time.time + 1f / fireRate;                        
                         animator.SetTrigger("isShooting");
                     }
                     else if (playerInput.actions["Fire"].triggered && ammoMetralhadora > 0)
