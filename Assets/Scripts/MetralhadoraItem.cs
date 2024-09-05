@@ -10,6 +10,8 @@ public class MetralhadoraItem : MonoBehaviour
     GameObject newShoot;
     [SerializeField]
     float newRate;
+    [SerializeField]
+    int ammo;
 
     private void Start()
     {
@@ -20,7 +22,7 @@ public class MetralhadoraItem : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            playerShoot.ammoMetralhadora += 10;
+            playerShoot.ammoMetralhadora += ammo;
             playerShoot.fireRate = newRate;
             playerShoot.shoot = newShoot;
             Destroy(this.gameObject);   

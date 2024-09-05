@@ -13,6 +13,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] GameObject special;
     Animator animator;
     Tupperware tupperware;
+    PlayerMovement playerMovement;
 
     [SerializeField]public AudioSource shootSound;
     [SerializeField]public AudioSource weaponCollectSound;
@@ -23,7 +24,11 @@ public class PlayerShoot : MonoBehaviour
     public float fireRate; 
     float nextShoot;
     [SerializeField]
-    int scoreQuantity;    
+    int scoreQuantity;
+    [SerializeField]
+    float spreadPositive;
+    [SerializeField]
+    float spreadNegative;
 
     [SerializeField] public PlayerInput playerInput;
 
@@ -42,6 +47,7 @@ public class PlayerShoot : MonoBehaviour
         playerInput.GetComponent<PlayerInput>();
         animator = GetComponent<Animator>();
         tupperware = GetComponent<Tupperware>();
+        playerMovement = GetComponent<PlayerMovement>();
         fireRate = initialFireRate;
         shoot = initialShoot;
     }
@@ -98,7 +104,7 @@ public class PlayerShoot : MonoBehaviour
                     }
                     else if (playerInput.actions["Fire"].triggered && ammoMetralhadora > 0)
                     {
-                        Shoot();
+                        ShootMetralhadora();
                         nextShoot = Time.time + 1f / fireRate;
                         animator.SetTrigger("isShooting");                        
                         ammoMetralhadora -= 1;
@@ -117,9 +123,39 @@ public class PlayerShoot : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(shoot, shootPoint.position, shootPoint.rotation);
-        shootSound.Play();
-        Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
+        if(playerMovement.isFacingRight == true)
+        {
+            shootPoint.rotation = Quaternion.Euler(0, 0, 0);
+            Instantiate(shoot, shootPoint.position, shootPoint.rotation);
+            shootSound.Play();
+            Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
+        }
+        else if (playerMovement.isFacingRight == false)
+        {
+            shootPoint.rotation = Quaternion.Euler(0, 180, 0);
+            Instantiate(shoot, shootPoint.position, shootPoint.rotation);
+            shootSound.Play();
+            Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
+        }
+    }
+
+    void ShootMetralhadora()
+    {
+        float spread = Random.Range(spreadPositive, spreadNegative);
+        if (playerMovement.isFacingRight == true)
+        {
+            shootPoint.rotation = Quaternion.Euler(0, 0, spread);
+            Instantiate(shoot, shootPoint.position, shootPoint.rotation);
+            shootSound.Play();
+            Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
+        }else if(playerMovement.isFacingRight == false)
+        {
+            shootPoint.rotation = Quaternion.Euler(0, 180, spread);
+            Instantiate(shoot, shootPoint.position, shootPoint.rotation);
+            shootSound.Play();
+            Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
+        }
+        
     }
 
     void ShootSpecial()
