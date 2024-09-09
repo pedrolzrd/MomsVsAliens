@@ -6,7 +6,7 @@ public class EnemyDamage : MonoBehaviour
 {
     private Health playerHealth;
 
-    public int damage = 1;
+    public int damage = 3;
 
     private void Awake()
     {

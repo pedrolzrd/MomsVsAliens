@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 15
-  damage: 1
+  damage: 3
   impactEffect: {fileID: 4351672642577378868, guid: ae06c03b2c4fc074dbc84b675fb256fe, type: 3}
 --- !u!50 &-44129983052531032
 Rigidbody2D:

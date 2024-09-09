@@ -18,6 +18,7 @@ TagManager:
   - resPoint
   - FollowTrigger
   - Wave_Enemy
+  - HealthBar
   layers:
   - Default
   - TransparentFX
