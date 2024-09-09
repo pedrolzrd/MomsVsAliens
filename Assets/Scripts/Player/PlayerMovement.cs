@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     public float force;
     public bool isJumping;
-    bool isFacingRight = true;
+    public bool isFacingRight = true;
 
     private void Start()
     {
