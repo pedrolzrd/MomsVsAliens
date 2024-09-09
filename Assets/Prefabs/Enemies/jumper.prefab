@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 1951994382387113794}
   - component: {fileID: 1951994382387113804}
   m_Layer: 0
-  m_Name: Jumper
+  m_Name: jumper
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,8 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a0511c010e6924da5868fa2ad17b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
-  damage: 1
+  damage: 3
 --- !u!114 &1951994382387113804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,4 +194,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 2364952671702409484, guid: 29cfbd2539e11434d99bf49462e3139b, type: 3}
   shootpoint: {fileID: 1951994381996325095}
+  enemyRateOfFire: 2
   playerRange: 23

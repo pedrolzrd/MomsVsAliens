@@ -11,7 +11,7 @@ public class FallDamage : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            playerHealth.TakeDamage(1);
+            playerHealth.TakeDamage(3);
             collision.transform.position = returnpoint.transform.position;
         }
     }

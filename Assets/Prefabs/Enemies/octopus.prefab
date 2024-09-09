@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 5855932318677451124}
   - component: {fileID: 5855932318677451123}
   m_Layer: 0
-  m_Name: Octopus
+  m_Name: octopus
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,8 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a0511c010e6924da5868fa2ad17b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
-  damage: 1
+  damage: 3
 --- !u!114 &5855932318677451125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,4 +230,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 2804487218733050204, guid: 4058668d9793be448b1fda3c821c4d56, type: 3}
   shootpoint: {fileID: 5855932316743153675}
+  enemyRateOfFire: 2
   playerRange: 18

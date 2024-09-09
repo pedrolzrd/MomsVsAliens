@@ -27,7 +27,7 @@ public class HealItem : MonoBehaviour
         {
             if (playerHealth.currentHealth < playerHealth.maxHealth)
             {
-                playerHealth.RecoverLife(heal);
+                playerHealth.RecoverHealthAndLife();
                 Instantiate(healAnimation, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
