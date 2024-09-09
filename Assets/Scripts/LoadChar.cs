@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class LoadChar : MonoBehaviour
 {
-    public GameObject[] charPrefabs;
-    public Transform spawnPoint;
+    public RuntimeAnimatorController[] charAnimators;
+    public Animator playerAnimator;
+
+    public RuntimeAnimatorController newAnimator;
 
     private void Start()
     {
         int selectedCharacter = PlayerPrefs.GetInt("selectedChar");
-        GameObject prefab = charPrefabs[selectedCharacter];
-        GameObject clone = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
+        RuntimeAnimatorController CharAnimator = charAnimators[selectedCharacter];
+
+        playerAnimator.runtimeAnimatorController = CharAnimator;
+        //playerAnimator = GetComponent<Animator>();
     }
 }

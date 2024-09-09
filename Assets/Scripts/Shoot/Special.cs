@@ -15,6 +15,7 @@ public class Special : MonoBehaviour
     public int damage = 100;
 
     public GameObject enemyDeathEffect;
+
     private void Start()
     {
         _rb.velocity = transform.right * _speed;

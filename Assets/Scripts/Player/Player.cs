@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        print(_facingRight);
         Jump();
         if(Time.time >= nextShoot)
         {
