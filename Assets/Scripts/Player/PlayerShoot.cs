@@ -34,6 +34,7 @@ public class PlayerShoot : MonoBehaviour
 
     public bool canShoot = false;
     public int ammoMetralhadora;
+    public int ammoDoze;
 
     public RuntimeAnimatorController newController;
 
@@ -83,8 +84,16 @@ public class PlayerShoot : MonoBehaviour
     }
 
     void Update()
-    {    
-        if(ammoMetralhadora <= 0)
+    {
+        print(ammoDoze);
+        print(shoot.name);
+        print(fireRate);
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            ammoDoze = 0;
+        }
+
+        if(ammoMetralhadora <= 0 || ammoDoze <= 0)
         {
             fireRate = initialFireRate;
             shoot = initialShoot;
