@@ -10,8 +10,13 @@ public class EnemyDamage : MonoBehaviour
 
     private void Awake()
     {
-        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        
 
+    }
+
+    private void Start()
+    {
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
     }
 
     void Update()

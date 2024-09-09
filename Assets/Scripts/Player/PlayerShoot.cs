@@ -71,6 +71,8 @@ public class PlayerShoot : MonoBehaviour
 
     void Update()
     {        
+
+
         if(!PauseMenu.isPaused)
         {
             if (Time.time >= nextShoot)
@@ -83,7 +85,9 @@ public class PlayerShoot : MonoBehaviour
                         nextShoot = Time.time + 1f / fireRate;
                         animator.SetTrigger("isShooting");
                     }
-                    if (tupperware.score >= scoreQuantity && Input.GetKeyDown(KeyCode.P))
+
+                    //Logica que Permite Atirar o Special Shot
+                    if (tupperware.score >= scoreQuantity && playerInput.actions["SpecialShot"].triggered) /*Input.GetKeyDown(KeyCode.P)*/
                     {
                         ShootSpecial();
                         animator.SetTrigger("isShooting");

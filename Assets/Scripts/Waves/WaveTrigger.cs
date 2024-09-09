@@ -32,8 +32,6 @@ public class WaveTrigger : MonoBehaviour
                 //Transicionar para Wave Cam
                 WaveManager.instance.SwitchCamera(WaveManager.instance.waveCam);
 
-                
-
                 //Ativar os Colliders para o player nao sair da tela.
                 WaveManager.instance.AtivarColliders();
 

@@ -40,8 +40,10 @@ public class CharSelection : MonoBehaviour
     public void StartGame()
     {
         PlayerPrefs.SetInt("selectedChar", selectedChar);
-        // SceneManager.LoadScene("Game");
-        SceneManager.LoadScene("Intro");
+
+
+        //SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Intro"); 
     }
 
 }

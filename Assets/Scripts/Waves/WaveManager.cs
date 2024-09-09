@@ -20,7 +20,7 @@ public class WaveManager : MonoBehaviour
 
     [SerializeField] GameObject leftCollider, rightCollider;
 
-    public GameObject player;
+    [HideInInspector]public GameObject player;
 
     void Start()
     {

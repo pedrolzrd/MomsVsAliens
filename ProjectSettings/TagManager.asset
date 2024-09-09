@@ -22,13 +22,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - PostProcessing
   - Bounds
-  - 
-  - 
+  - Enemy
+  - Ground
   - 
   - 
   - 
