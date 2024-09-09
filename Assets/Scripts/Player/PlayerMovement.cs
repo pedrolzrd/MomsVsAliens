@@ -10,18 +10,19 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
 
-    [SerializeField]
-    public float speed;
-    [SerializeField]
-    public float force;
+    [SerializeField] public float speed;
+    [SerializeField] public float normalSpeed;
+    [SerializeField] public float force;
     public bool isJumping;
-    bool isFacingRight = true;
+    public bool isFacingRight = true;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        playerInput = GetComponent<PlayerInput>();  
+        playerInput = GetComponent<PlayerInput>();
+
+        normalSpeed = speed;
     }
 
     private void Update()

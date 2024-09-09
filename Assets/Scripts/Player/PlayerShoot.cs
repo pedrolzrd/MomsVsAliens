@@ -6,24 +6,34 @@ public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] public GameObject shootEffect;
 
-    [SerializeField] GameObject shoot;
+    [SerializeField] GameObject initialShoot;
+    [HideInInspector]
+    public GameObject shoot;
     [SerializeField] Transform shootPoint;
     [SerializeField] GameObject special;
     Animator animator;
     Tupperware tupperware;
+    PlayerMovement playerMovement;
 
     [SerializeField]public AudioSource shootSound;
     [SerializeField]public AudioSource weaponCollectSound;
 
     [SerializeField]
-    float fireRate;
+    public float initialFireRate;
+    [HideInInspector]
+    public float fireRate; 
     float nextShoot;
     [SerializeField]
     int scoreQuantity;
+    [SerializeField]
+    float spreadPositive;
+    [SerializeField]
+    float spreadNegative;
 
     [SerializeField] public PlayerInput playerInput;
 
     public bool canShoot = false;
+    public int ammoMetralhadora;
 
     public RuntimeAnimatorController newController;
 
@@ -37,6 +47,9 @@ public class PlayerShoot : MonoBehaviour
         playerInput.GetComponent<PlayerInput>();
         animator = GetComponent<Animator>();
         tupperware = GetComponent<Tupperware>();
+        playerMovement = GetComponent<PlayerMovement>();
+        fireRate = initialFireRate;
+        shoot = initialShoot;
     }
 
     private void OnEnable()
@@ -70,19 +83,33 @@ public class PlayerShoot : MonoBehaviour
     }
 
     void Update()
-    {        
+    {    
+        if(ammoMetralhadora <= 0)
+        {
+            fireRate = initialFireRate;
+            shoot = initialShoot;
+        }
+
         if(!PauseMenu.isPaused)
         {
             if (Time.time >= nextShoot)
             {
                 if (canShoot)
                 {
-                    if (playerInput.actions["Fire"].triggered)
+                    if (playerInput.actions["Fire"].triggered && ammoMetralhadora <= 0)
                     {
                         Shoot();
-                        nextShoot = Time.time + 1f / fireRate;
+                        nextShoot = Time.time + 1f / fireRate;                        
                         animator.SetTrigger("isShooting");
                     }
+                    else if (playerInput.actions["Fire"].triggered && ammoMetralhadora > 0)
+                    {
+                        ShootMetralhadora();
+                        nextShoot = Time.time + 1f / fireRate;
+                        animator.SetTrigger("isShooting");                        
+                        ammoMetralhadora -= 1;
+                    }
+
                     if (tupperware.score >= scoreQuantity && Input.GetKeyDown(KeyCode.P))
                     {
                         ShootSpecial();
@@ -96,9 +123,39 @@ public class PlayerShoot : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(shoot, shootPoint.position, shootPoint.rotation);
-        shootSound.Play();
-        Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
+        if(playerMovement.isFacingRight == true)
+        {
+            shootPoint.rotation = Quaternion.Euler(0, 0, 0);
+            Instantiate(shoot, shootPoint.position, shootPoint.rotation);
+            shootSound.Play();
+            Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
+        }
+        else if (playerMovement.isFacingRight == false)
+        {
+            shootPoint.rotation = Quaternion.Euler(0, 180, 0);
+            Instantiate(shoot, shootPoint.position, shootPoint.rotation);
+            shootSound.Play();
+            Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
+        }
+    }
+
+    void ShootMetralhadora()
+    {
+        float spread = Random.Range(spreadPositive, spreadNegative);
+        if (playerMovement.isFacingRight == true)
+        {
+            shootPoint.rotation = Quaternion.Euler(0, 0, spread);
+            Instantiate(shoot, shootPoint.position, shootPoint.rotation);
+            shootSound.Play();
+            Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
+        }else if(playerMovement.isFacingRight == false)
+        {
+            shootPoint.rotation = Quaternion.Euler(0, 180, spread);
+            Instantiate(shoot, shootPoint.position, shootPoint.rotation);
+            shootSound.Play();
+            Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
+        }
+        
     }
 
     void ShootSpecial()
