@@ -24,8 +24,6 @@ public class PlayerShoot : MonoBehaviour
     public float fireRate; 
     float nextShoot;
     [SerializeField]
-    int scoreQuantity;
-    [SerializeField]
     float spreadPositive;
     [SerializeField]
     float spreadNegative;
@@ -110,11 +108,11 @@ public class PlayerShoot : MonoBehaviour
                         ammoMetralhadora -= 1;
                     }
 
-                    if (tupperware.score >= scoreQuantity && Input.GetKeyDown(KeyCode.P))
+                    if (tupperware.score >= tupperware.maxScore && Input.GetKeyDown(KeyCode.P))
                     {
                         ShootSpecial();
                         animator.SetTrigger("isShooting");
-                        tupperware.score -= scoreQuantity;
+                        tupperware.LoseScoreTupperware(tupperware.maxScore);
                     }
                 }
             }

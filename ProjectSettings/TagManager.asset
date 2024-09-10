@@ -19,6 +19,7 @@ TagManager:
   - FollowTrigger
   - Wave_Enemy
   - HealthBar
+  - TupperwareBar
   layers:
   - Default
   - TransparentFX
