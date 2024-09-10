@@ -21,9 +21,9 @@ public class Health : MonoBehaviour
 
 
     // Life
-    [SerializeField] float startingLife = 5;
+    [SerializeField] float startingLife = 3;
     [SerializeField] public float currentLife { get; private set; }
-    [SerializeField] public float maxLife = 5;
+    [SerializeField] public float maxLife = 3;
 
 
     // Health
@@ -95,14 +95,18 @@ public class Health : MonoBehaviour
                     return;
                 }
 
+                UpdateLifeCounter();
                 lifeLostSound.Play();
-                lifeCounter.text = currentLife.ToString();
                 currentHealth = maxHealth;
             }
 
             UpdateHealthBar();
             audioHurt.Play();
         }
+    }
+
+    public void UpdateLifeCounter() {
+        lifeCounter.text = currentLife.ToString();
     }
 
     public void UpdateHealthBar() {
@@ -120,7 +124,6 @@ public class Health : MonoBehaviour
             }
         }
 
-        // Se currentHealth <= 3, piscar os três primeiros healthBarImages
         if (currentHealth <= 3 && !isBlinking)
         {
             StartCoroutine(BlinkHealthBars());
@@ -177,6 +180,7 @@ public class Health : MonoBehaviour
         }
 
         UpdateHealthBar();
+        UpdateLifeCounter();
         audioHeal.Play();
     }
 
