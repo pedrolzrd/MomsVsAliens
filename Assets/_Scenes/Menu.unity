@@ -1322,4 +1322,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988f22889c52665488a6d3b677403502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressStartText: {fileID: 0}
+  pressStartImage: {fileID: 1679891921}
