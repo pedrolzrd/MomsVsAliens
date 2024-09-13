@@ -15,9 +15,11 @@ public class PlayerShoot : MonoBehaviour
     Tupperware tupperware;
     PlayerMovement playerMovement;
 
+    [Header("Sons")]
     [SerializeField]public AudioSource shootSound;
     [SerializeField]public AudioSource weaponCollectSound;
 
+    [Header("Arma")]
     [SerializeField]
     public float initialFireRate;
     [HideInInspector]
@@ -146,7 +148,7 @@ public class PlayerShoot : MonoBehaviour
                         shotCounter -= Time.deltaTime;
                     }
 
-                    if (tupperware.score >= tupperware.maxScore && Input.GetKeyDown(KeyCode.P))
+                    if (tupperware.score >= tupperware.maxScore && playerInput.actions["SpecialShot"].triggered)
                     {
                         ShootSpecial();
                         animator.SetTrigger("isShooting");
@@ -163,7 +165,7 @@ public class PlayerShoot : MonoBehaviour
         Instantiate(shoot, shootPoint.position, shootPoint.rotation);
         shootSound.Play();
         
-        Instantiate(shootEffect, shootPoint.localPosition, shootPoint.rotation);
+        Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
 
     }
 
