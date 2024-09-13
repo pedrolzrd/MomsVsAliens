@@ -15,9 +15,11 @@ public class PlayerShoot : MonoBehaviour
     Tupperware tupperware;
     PlayerMovement playerMovement;
 
+    [Header("Sons")]
     [SerializeField]public AudioSource shootSound;
     [SerializeField]public AudioSource weaponCollectSound;
 
+    [Header("Arma")]
     [SerializeField]
     public float initialFireRate;
     [HideInInspector]
@@ -40,6 +42,15 @@ public class PlayerShoot : MonoBehaviour
     //Point UP Logic
     private InputAction UpAimAction;
 
+    private InputAction FireAction;
+
+    [SerializeField]
+    bool firing;
+
+
+    float shotCounter;
+    public float rateOfFire = 0.2f;
+
     private void Start()
     {
         playerInput.GetComponent<PlayerInput>();
@@ -56,6 +67,21 @@ public class PlayerShoot : MonoBehaviour
         UpAimAction.performed += OnButtonPressed;
         UpAimAction.canceled += OnButtonReleased;
         UpAimAction.Enable();
+
+        FireAction = playerInput.actions["Fire"];
+        FireAction.performed += FirePressed;
+        FireAction.canceled += FireCanceled;
+        FireAction.Enable();
+    }
+
+    private void FireCanceled(InputAction.CallbackContext context)
+    {
+        firing = false;
+    }
+
+    private void FirePressed(InputAction.CallbackContext context)
+    {
+        firing = true;
     }
 
     private void OnDisable()
@@ -63,6 +89,10 @@ public class PlayerShoot : MonoBehaviour
         UpAimAction.performed -= OnButtonPressed;
         UpAimAction.canceled -= OnButtonReleased;
         UpAimAction.Disable();
+
+        FireAction.performed -= FirePressed;
+        FireAction.canceled -= FireCanceled;
+        FireAction.Disable();
     }
 
     private void OnButtonPressed(InputAction.CallbackContext context)
@@ -76,6 +106,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void OnButtonReleased(InputAction.CallbackContext context)
     {
+        //Volta o Sprite para a posição normal e chama o Metodo que falta o shootpoint pra frente.
         animator.SetBool("upAim", false);
         ChangeAimPositionFront();   
     }
@@ -100,15 +131,24 @@ public class PlayerShoot : MonoBehaviour
                         nextShoot = Time.time + 1f / fireRate;                        
                         animator.SetTrigger("isShooting");
                     }
-                    else if (playerInput.actions["Fire"].triggered && ammoMetralhadora > 0)
+
+
+                    if (firing && ammoMetralhadora > 0)
                     {
-                        ShootMetralhadora();
-                        nextShoot = Time.time + 1f / fireRate;
-                        animator.SetTrigger("isShooting");                        
-                        ammoMetralhadora -= 1;
+                        shotCounter -= Time.deltaTime;
+
+                        if (shotCounter <= 0)
+                        {
+                            shotCounter = rateOfFire;
+                            ShootMetralhadora();
+                        }
+                    }
+                    else
+                    {
+                        shotCounter -= Time.deltaTime;
                     }
 
-                    if (tupperware.score >= tupperware.maxScore && Input.GetKeyDown(KeyCode.P))
+                    if (tupperware.score >= tupperware.maxScore && playerInput.actions["SpecialShot"].triggered)
                     {
                         ShootSpecial();
                         animator.SetTrigger("isShooting");
@@ -117,45 +157,38 @@ public class PlayerShoot : MonoBehaviour
                 }
             }
         }
+
     }
 
     void Shoot()
     {
-        if(playerMovement.isFacingRight == true)
-        {
-            shootPoint.rotation = Quaternion.Euler(0, 0, 0);
-            Instantiate(shoot, shootPoint.position, shootPoint.rotation);
-            shootSound.Play();
-            Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
-        }
-        else if (playerMovement.isFacingRight == false)
-        {
-            shootPoint.rotation = Quaternion.Euler(0, 180, 0);
-            Instantiate(shoot, shootPoint.position, shootPoint.rotation);
-            shootSound.Play();
-            Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
-        }
+        Instantiate(shoot, shootPoint.position, shootPoint.rotation);
+        shootSound.Play();
+        
+        Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
+
     }
 
     void ShootMetralhadora()
     {
         float spread = Random.Range(spreadPositive, spreadNegative);
-        if (playerMovement.isFacingRight == true)
+        if((shootPoint.rotation.z >= 0 && shootPoint.rotation.z < 10) || 
+            (shootPoint.rotation.z >= 80 && shootPoint.rotation.z <= 100))
         {
-            shootPoint.rotation = Quaternion.Euler(0, 0, spread);
+            shootPoint.Rotate(0, 0, spread);
             Instantiate(shoot, shootPoint.position, shootPoint.rotation);
             shootSound.Play();
             Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
-        }else if(playerMovement.isFacingRight == false)
+            ammoMetralhadora -= 1;
+        } else
         {
-            shootPoint.rotation = Quaternion.Euler(0, 180, spread);
             Instantiate(shoot, shootPoint.position, shootPoint.rotation);
             shootSound.Play();
             Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
+            ammoMetralhadora -= 1;
         }
-        
     }
-
+        
     void ShootSpecial()
     {
         Instantiate(special, shootPoint.position, shootPoint.rotation);
@@ -175,36 +208,10 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
-    public IEnumerator changeAimPositionUp()
-    {
-        if(pointingUP == true)
-        {
-            yield return null;
-
-        } else
-        {
-            shootPoint.localRotation = Quaternion.Euler(0f, 0f, 90f);
-            shootPoint.localPosition = new Vector3(-0.056f, 0.384f, 0);
-            pointingUP = true;
-            yield return null;
-        }
-    }
-
-    public IEnumerator changeAimPositionFront()
-    {
-        if (pointingUP == true)
-        {
-            shootPoint.localRotation = Quaternion.Euler(0f, 0f, 0f);
-            shootPoint.localPosition = new Vector3(0.265f, 0.144f, 0);
-            pointingUP = false;
-        }
-        yield return null;
-    }
-
     public void ChangeAimPositionUp()
     {
         shootPoint.localRotation = Quaternion.Euler(0f, 0f, 90f);
-        shootPoint.localPosition = new Vector3(-0.056f, 0.384f, 0);
+        shootPoint.localPosition = new Vector3(0.029f, 0.450f, 0);
         pointingUP = true;
     }
 
