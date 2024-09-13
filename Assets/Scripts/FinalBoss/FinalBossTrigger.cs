@@ -4,20 +4,32 @@ using UnityEngine;
 
 public class FinalBossTrigger : MonoBehaviour
 {
-    [SerializeField] BossHealth bossHealth;
 
-    [SerializeField] GameObject cutscene;
+    [SerializeField] AudioSource LevelMusic;
+    [SerializeField] AudioSource BossMusic;
+
     void Start()
     {
-        
+
     }
 
 
     void Update()
     {
-        if(!bossHealth.isActiveAndEnabled)
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
         {
-            cutscene.SetActive(true);
+
+            //Trocar Musica.
+            LevelMusic.Stop();
+            BossMusic.Stop();
+
+
+            Destroy(gameObject);
         }
     }
 }
