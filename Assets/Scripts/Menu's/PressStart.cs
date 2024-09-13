@@ -10,7 +10,7 @@ public class PressStart : MonoBehaviour
     public AudioSource submitAudio;
 
     public void Start() {
-        pressStart.gameObject.LeanScale(new Vector3(1.2f, 1.2f), 0.9f).setLoopPingPong();
+        if(pressStart) pressStart.gameObject.LeanScale(new Vector3(1.2f, 1.2f), 0.9f).setLoopPingPong();
     }
 
     public void Update() {

@@ -11,6 +11,6 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        pressStartImage.gameObject.LeanScale(new Vector3(1.2f, 1.2f), 0.9f).setLoopPingPong();
+        if(pressStartImage) pressStartImage.gameObject.LeanScale(new Vector3(1.2f, 1.2f), 0.9f).setLoopPingPong();
     }
 }
