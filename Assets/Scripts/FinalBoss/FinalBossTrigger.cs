@@ -26,8 +26,9 @@ public class FinalBossTrigger : MonoBehaviour
 
             //Trocar Musica.
             LevelMusic.Stop();
-            BossMusic.Stop();
+            BossMusic.Play();
 
+            WaveManager.instance.SwitchCamera(WaveManager.instance.finalBossCam);
 
             Destroy(gameObject);
         }
