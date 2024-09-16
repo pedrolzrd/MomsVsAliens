@@ -119,7 +119,7 @@ public class PlayerShoot : MonoBehaviour
             shoot = initialShoot;
         }
 
-        if(!PauseMenu.isPaused)
+        if(!GameManager.isPaused)
         {
             if (Time.time >= nextShoot)
             {
