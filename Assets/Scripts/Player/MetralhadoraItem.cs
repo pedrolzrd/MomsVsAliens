@@ -23,6 +23,7 @@ public class MetralhadoraItem : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerShoot.ammoMetralhadora += ammo;
+            playerShoot.ammoDoze = 0;
             playerShoot.fireRate = newRate;
             playerShoot.shoot = newShoot;
             Destroy(this.gameObject);   

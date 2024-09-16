@@ -22,6 +22,7 @@ public class DozeItem : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerShoot.ammoDoze += ammo;
+            playerShoot.ammoMetralhadora = 0;
             playerShoot.fireRate = newRate;
             playerShoot.shoot = newShoot;
             Destroy(this.gameObject);
