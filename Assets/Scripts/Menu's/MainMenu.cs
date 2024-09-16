@@ -7,10 +7,10 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
 
-    [SerializeField] public TextMeshProUGUI pressStartText;
+    [SerializeField] public Image pressStartImage;
 
     void Start()
     {
-        pressStartText.gameObject.LeanScale(new Vector3(1.2f, 1.2f), 0.9f).setLoopPingPong();
+        if(pressStartImage) pressStartImage.gameObject.LeanScale(new Vector3(1.2f, 1.2f), 0.9f).setLoopPingPong();
     }
 }

@@ -1,97 +1,187 @@
 using System.Collections;
+using TMPro;
+using UnityEditorInternal;
 using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] SpriteRenderer[] sprites;
-    [SerializeField] int hpFlickerAmnt;
-    [SerializeField] int satFlickerAmnt;
-    [SerializeField] float flickerDuration;
 
-    [SerializeField] float dmg;
+    // Player
     [SerializeField] Controller controller;
-    [SerializeField] float startingHealth;
-    [SerializeField] public float startingHealthSaturation;
 
-    public float healthSaturation { get; private set; }
+    // StatusBar
+    private GameObject[] healthBars;
+    public TextMeshProUGUI lifeCounter;
+    private List<BarState> healthBarStates;
+    private List<Image> healthBarImages;
+    [SerializeField]  private GameObject lifeIcon;
+    private Image lifeIconImage;
+
+
+    // Life
+    [SerializeField] float startingLife = 3;
+    [SerializeField] public float currentLife { get; private set; }
+    [SerializeField] public float maxLife = 3;
+
+
+    // Health
+    [SerializeField] float startingHealth = 9;
     [SerializeField] public float currentHealth { get; private set; }
-    [SerializeField] public float maxHealth = 5; 
+    [SerializeField] public float maxHealth = 9;
 
+
+    // Damage
     bool canTakeDamage = true;
 
     public AudioSource audioHurt;
     public AudioSource audioHeal;
+    public AudioSource lifeLostSound;
 
+    // Respawn
     Respawn respawn;
+
+
+    // Blink
+    private bool isBlinking = false;
+    private float blinkDuration = 0.15f;
+
 
     private void Awake()
     {
+        currentLife = startingLife;
         currentHealth = startingHealth;
-        healthSaturation = startingHealthSaturation;
+
+        lifeIconImage = lifeIcon.GetComponent<Image>();
+
+        healthBarStates = new List<BarState>();
+        healthBarImages = new List<Image>();
+        healthBars = GameObject.FindGameObjectsWithTag("HealthBar");
+        for (int i = 0; i < (int)maxHealth; i++)
+        {
+            healthBarStates.Add(healthBars[i].GetComponent<BarState>());
+            healthBarImages.Add(healthBars[i].GetComponent<Image>());
+        }
+
         respawn = GetComponent<Respawn>();
     }
 
     private void Update()
     {
-        if(currentHealth <= 0)
+        if (Input.GetKeyDown(KeyCode.M))
         {
-            controller.GameOver();
+            TakeDamage(3);
         }
 
-        if(healthSaturation < 0)
+        if (Input.GetKeyDown(KeyCode.N))
         {
-            
-            healthSaturation = startingHealthSaturation;
-            currentHealth = Mathf.Clamp(currentHealth - dmg, 0, startingHealth);
-            audioHurt.Play();
-            StartCoroutine(DamageFlicker(flickerDuration, hpFlickerAmnt));
-            respawn.RespawnPlayer();
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            TakeDamage(1);
+            RecoverHealthAndLife();
         }
     }
 
     public void TakeDamage(float damage)
     {
-        if(canTakeDamage)
+        if (canTakeDamage)
         {
-            healthSaturation -= damage;
+            currentHealth -= damage;
+
+            if(currentHealth <= 0) {
+                currentLife--;
+
+                if (currentLife == 0)
+                {
+                    controller.GameOver();
+                    return;
+                }
+
+                UpdateLifeCounter();
+                lifeLostSound.Play();
+                currentHealth = maxHealth;
+            }
+
+            UpdateHealthBar();
             audioHurt.Play();
-            if(healthSaturation >= 1)
-            {
-                StartCoroutine(DamageFlicker(flickerDuration, satFlickerAmnt));
-            }            
-        }        
-    }
-
-    public void RecoverLife(float heal)
-    {
-        if(currentHealth < maxHealth)
-        {
-            currentHealth = currentHealth + heal;
-            audioHeal.Play();            
-        }        
-    }
-
-    IEnumerator DamageFlicker(float flickerDuration, float flickerAmnt)
-    {
-        canTakeDamage = false;
-        for(int i = 0; i < flickerAmnt; i++)
-        {
-            foreach(SpriteRenderer s in sprites)
-            {
-                s.color = new Color(1f, 1f, 1f, .5f);
-            }
-            yield return new WaitForSeconds(flickerDuration);
-            foreach (SpriteRenderer s in sprites)
-            {
-                s.color = Color.white;
-            }
-            yield return new WaitForSeconds(flickerDuration);
-            canTakeDamage = true;
         }
     }
+
+    public void UpdateLifeCounter() {
+        lifeCounter.text = currentLife.ToString();
+    }
+
+    public void UpdateHealthBar() {
+        for (int i = 0; i < (int)maxHealth; i++)
+        {
+            BarState healthBarState = healthBarStates[i];
+
+            if (healthBarState != null)
+            {
+                if(i < currentHealth) {
+                    healthBarState.Active();
+                }else {
+                    healthBarState.Inactive();
+                }
+            }
+        }
+
+        if (currentHealth <= 3 && !isBlinking)
+        {
+            StartCoroutine(BlinkHealthBars());
+        }
+    }
+
+    public IEnumerator BlinkHealthBars()
+    {
+        isBlinking = true;
+
+        while (currentHealth <= 3)
+        {
+
+            Color tempIconColor = lifeIconImage.color;
+            tempIconColor.a = 0.66f;
+            lifeIconImage.color = tempIconColor;
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (i < healthBarImages.Count)
+                {
+                    Color tempColor = healthBarImages[i].color;
+                    tempColor.a = 0.66f;
+                    healthBarImages[i].color = tempColor;
+                }
+            }
+
+            yield return new WaitForSeconds(blinkDuration);
+
+            tempIconColor.a = 1f;
+            lifeIconImage.color = tempIconColor;
+            for (int i = 0; i < 3; i++)
+            {
+                if (i < healthBarImages.Count)
+                {
+                    Color tempColor = healthBarImages[i].color;
+                    tempColor.a = 1f;
+                    healthBarImages[i].color = tempColor;
+                }
+            }
+
+            yield return new WaitForSeconds(blinkDuration);
+        }
+
+        isBlinking = false;
+    }
+
+    public void RecoverHealthAndLife()
+    {
+        currentHealth = maxHealth;
+
+        if(currentLife < maxLife) {
+            currentLife += 1;
+        }
+
+        UpdateHealthBar();
+        UpdateLifeCounter();
+        audioHeal.Play();
+    }
+
 }

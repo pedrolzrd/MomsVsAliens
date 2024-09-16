@@ -6,12 +6,17 @@ public class EnemyDamage : MonoBehaviour
 {
     private Health playerHealth;
 
-    public int damage = 1;
+    public int damage = 3;
 
     private void Awake()
     {
-        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        
 
+    }
+
+    private void Start()
+    {
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
     }
 
     void Update()

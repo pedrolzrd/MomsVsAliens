@@ -1,12 +1,29 @@
 using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PressStart : MonoBehaviour
 {
-    public void StartSelectorScene()
+
+    [SerializeField] public Image pressStart;
+    public AudioSource submitAudio;
+
+    public void Start() {
+        if(pressStart) pressStart.gameObject.LeanScale(new Vector3(1.2f, 1.2f), 0.9f).setLoopPingPong();
+    }
+
+    public void Update() {
+        if(Input.GetButtonDown("Jump")) {
+            StartCoroutine(StartSelectorScene());
+        }
+    }
+
+    public IEnumerator StartSelectorScene()
     {
+        submitAudio.Play();
+        pressStart.gameObject.LeanScale(new Vector3(1.2f, 1.2f), 0.1f).setLoopPingPong();
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Selector");
     }
 }

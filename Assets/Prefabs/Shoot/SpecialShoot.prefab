@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 5394505240736711284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -22.7, y: 6.4, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 7, y: 7, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -178,6 +178,7 @@ MonoBehaviour:
   _speed: 20
   damage: 100
   enemyDeathEffect: {fileID: 4338841011067334946, guid: 1d907128788f1994aa5d9b9bb5ba441d, type: 3}
+  impactEffect: {fileID: 1033679692533729153, guid: d3ddc6dda58fd614bb1842d116acd70b, type: 3}
 --- !u!82 &-4414680865091784357
 AudioSource:
   m_ObjectHideFlags: 0

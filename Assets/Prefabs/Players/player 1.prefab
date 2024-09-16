@@ -155,6 +155,7 @@ MonoBehaviour:
   playerInput: {fileID: 7679310610462924191}
   speed: 12
   force: 1000
+  isJumping: 0
 --- !u!114 &8598449915513547615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,9 +168,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ee19b2554dcc84a9ddb1b7ed6bea76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootEffect: {fileID: 0}
   shoot: {fileID: 3445560629639608594, guid: 032981f5277c51b45814b7b559874db5, type: 3}
   shootPoint: {fileID: 8598449916244912254}
+  special: {fileID: 0}
+  shootSound: {fileID: 0}
+  weaponCollectSound: {fileID: 0}
   fireRate: 2
+  scoreQuantity: 0
+  playerInput: {fileID: 0}
+  canShoot: 0
+  newController: {fileID: 0}
+  pointingUP: 0
 --- !u!114 &8598449915513547612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,8 +204,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f16683acaadfc94190c338e49838f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites: []
+  hpFlickerAmnt: 0
+  satFlickerAmnt: 0
+  flickerDuration: 0
+  dmg: 0
   controller: {fileID: 0}
   startingHealth: 3
+  startingHealthSaturation: 0
+  maxHealth: 5
+  audioHurt: {fileID: 0}
+  audioHeal: {fileID: 0}
 --- !u!114 &7679310610462924191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 42fbcd26eb7ba034faf1c7c4998ce1c9, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 870be4942dd18c940934aee6d46e9e74, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:

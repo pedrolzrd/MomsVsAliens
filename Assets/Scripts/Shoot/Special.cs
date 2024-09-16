@@ -15,6 +15,9 @@ public class Special : MonoBehaviour
     public int damage = 100;
 
     public GameObject enemyDeathEffect;
+
+    public GameObject impactEffect;
+
     private void Start()
     {
         _rb.velocity = transform.right * _speed;
@@ -24,6 +27,15 @@ public class Special : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            Instantiate(impactEffect, transform.position, transform.rotation);
+            _animator.SetTrigger("Hit");
+            Instantiate(enemyDeathEffect, collision.transform.position, collision.transform.rotation);
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Wave_Enemy"))
+        {
+            Instantiate(impactEffect, transform.position, transform.rotation);
             _animator.SetTrigger("Hit");
             Instantiate(enemyDeathEffect, collision.transform.position, collision.transform.rotation);
             Destroy(collision.gameObject);
@@ -34,6 +46,7 @@ public class Special : MonoBehaviour
             BossHealth enemy = collision.GetComponent<BossHealth>();
             if (enemy != null)
             {
+                Instantiate(impactEffect, transform.position, transform.rotation);
                 _animator.SetTrigger("Hit");
                 enemy.TakeDamage(damage);
             }            
@@ -45,6 +58,7 @@ public class Special : MonoBehaviour
             FinalBoss enemy = collision.GetComponent<FinalBoss>();
             if (enemy != null)
             {
+                Instantiate(impactEffect, transform.position, transform.rotation);
                 _animator.SetTrigger("Hit");
                 enemy.TakeDamage(damage);
             }            
@@ -53,6 +67,7 @@ public class Special : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Floor"))
         {
+            Instantiate(impactEffect, transform.position, transform.rotation);
             _animator.SetTrigger("Hit");
             Destroy(gameObject);
         }

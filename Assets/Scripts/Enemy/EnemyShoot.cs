@@ -10,7 +10,7 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField]
     Transform shootpoint;
 
-    private GameObject player;
+    [SerializeField] private GameObject player;
 
     [SerializeField] float enemyRateOfFire = 2 ;
 
@@ -23,8 +23,6 @@ public class EnemyShoot : MonoBehaviour
 
     void Update()
     {
-        
-
         float distance = Vector2.Distance(transform.position, player.transform.position);
         
         if(distance < playerRange)

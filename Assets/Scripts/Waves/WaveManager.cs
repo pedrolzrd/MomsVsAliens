@@ -12,15 +12,19 @@ public class WaveManager : MonoBehaviour
 
     public CinemachineVirtualCamera[] cameras;
 
+    [Header("Cameras")]
     public CinemachineVirtualCamera levelCam;
     public CinemachineVirtualCamera waveCam;
+    public CinemachineVirtualCamera caveCam;
+    public CinemachineVirtualCamera finalBossCam;
 
     public CinemachineVirtualCamera startCam;
     private CinemachineVirtualCamera currentCam;
 
-    [SerializeField] GameObject leftCollider, rightCollider;
-
-    public GameObject player;
+    [Header("Colliders")]
+    [SerializeField] GameObject leftCollider; 
+    [SerializeField] GameObject rightCollider;
+    [HideInInspector]public GameObject player;
 
     void Start()
     {

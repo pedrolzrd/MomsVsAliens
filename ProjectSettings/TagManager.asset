@@ -18,17 +18,20 @@ TagManager:
   - resPoint
   - FollowTrigger
   - Wave_Enemy
+  - HealthBar
+  - TupperwareBar
+  - CharacterSelect
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - PostProcessing
   - Bounds
-  - 
-  - 
+  - Enemy
+  - Ground
   - 
   - 
   - 
