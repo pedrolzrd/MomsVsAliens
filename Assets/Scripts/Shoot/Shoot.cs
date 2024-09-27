@@ -10,7 +10,7 @@ public class Shoot : MonoBehaviour
     [SerializeField]
     float _speed;
 
-    public int damage = 40;
+    public int damage = 1;
 
     public GameObject impactEffect;
     public GameObject enemyDeathEffect;
@@ -46,9 +46,6 @@ public class Shoot : MonoBehaviour
             }
             Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(gameObject);
-
-           
-
         }
 
         if (collision.gameObject.CompareTag("FinalBoss"))

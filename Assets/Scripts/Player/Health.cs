@@ -1,6 +1,5 @@
 using System.Collections;
 using TMPro;
-using UnityEditorInternal;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -39,6 +38,9 @@ public class Health : MonoBehaviour
     public AudioSource audioHeal;
     public AudioSource lifeLostSound;
 
+    //Damage Flash
+    private DamageFlash _damageFlash;
+
     // Respawn
     Respawn respawn;
 
@@ -47,11 +49,14 @@ public class Health : MonoBehaviour
     private bool isBlinking = false;
     private float blinkDuration = 0.15f;
 
+  
 
     private void Awake()
     {
         currentLife = startingLife;
         currentHealth = startingHealth;
+
+        _damageFlash = GetComponent<DamageFlash>();
 
         lifeIconImage = lifeIcon.GetComponent<Image>();
 
@@ -99,6 +104,9 @@ public class Health : MonoBehaviour
                 lifeLostSound.Play();
                 currentHealth = maxHealth;
             }
+
+            //damage Flash effect
+            _damageFlash.CallDamageFlash();
 
             UpdateHealthBar();
             audioHurt.Play();

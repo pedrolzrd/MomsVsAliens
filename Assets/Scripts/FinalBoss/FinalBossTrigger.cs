@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class FinalBossTrigger : MonoBehaviour
@@ -8,6 +7,12 @@ public class FinalBossTrigger : MonoBehaviour
     [SerializeField] AudioSource LevelMusic;
     [SerializeField] AudioSource BossMusic;
 
+    [SerializeField] GameObject rightCollider;
+    [SerializeField] GameObject leftCollider;
+
+    [SerializeField] Animator spaceShip;
+
+    [SerializeField]CinemachineVirtualCamera levelCam;
     void Start()
     {
 
@@ -31,6 +36,17 @@ public class FinalBossTrigger : MonoBehaviour
             WaveManager.instance.SwitchCamera(WaveManager.instance.finalBossCam);
 
             Destroy(gameObject);
+
+            //Ativar os Colliders 
+            rightCollider.SetActive(true);
+            leftCollider.SetActive(true);
+
+            levelCam.Follow = null;
+
+            //Dar play na animação de Surgir da Nave.
+            spaceShip.Play("spaceship_descend_finalBoss");
+
+
         }
     }
 }

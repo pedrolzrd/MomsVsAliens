@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f98c15080e295bf44b1bd53063fff162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 600
+  health: 50
   deathEffect: {fileID: 4338841011067334946, guid: 1d907128788f1994aa5d9b9bb5ba441d, type: 3}
   isInvulnerable: 0
   deadSpriteMiniBoss: {fileID: 2161397580605378240, guid: 885b4d3a8571c4248a77549befa93ee2, type: 3}

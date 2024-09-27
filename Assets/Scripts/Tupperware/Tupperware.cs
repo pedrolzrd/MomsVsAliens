@@ -71,11 +71,12 @@ public class Tupperware : MonoBehaviour
 
     public void ScoreTupperware() {
 
-        if(score == maxScore) return;
+        collectSound.Play();
+        if (score == maxScore) return;
 
         score++;
         scoreText.text = score.ToString();
-        collectSound.Play();
+        
         UpdateTupperwareBar();
     }
 

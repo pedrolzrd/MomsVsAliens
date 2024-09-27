@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: -9051674185570880435}
   _speed: 20
-  damage: 40
+  damage: 1
   impactEffect: {fileID: 1033679692533729153, guid: d3ddc6dda58fd614bb1842d116acd70b, type: 3}
   enemyDeathEffect: {fileID: 4338841011067334946, guid: 1d907128788f1994aa5d9b9bb5ba441d, type: 3}
 --- !u!58 &-8619306171388214281
