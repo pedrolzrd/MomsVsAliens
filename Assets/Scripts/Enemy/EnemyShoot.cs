@@ -10,7 +10,7 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField]
     Transform shootpoint;
 
-    [SerializeField] private GameObject player;
+    private GameObject player;
 
     [SerializeField] float enemyRateOfFire = 2 ;
 

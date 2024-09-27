@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FinalBoss : MonoBehaviour
 {
-    public int health = 500;
+    public int health = 90;
 
     public GameObject deathEffect;
 
@@ -24,9 +24,13 @@ public class FinalBoss : MonoBehaviour
 
     [SerializeField] public PlayerMovement playerMovement;
 
+    private DamageFlash _damageFlash;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        _damageFlash = GetComponent<DamageFlash>(); 
     }
 
     public void TakeDamage(int damage)
@@ -38,9 +42,9 @@ public class FinalBoss : MonoBehaviour
 
         health -= damage;
 
-        if (health <= 200)
+        if (health <= 60)
         {
-            GetComponent<Animator>().SetBool("isEnraged", true);
+            GetComponent<Animator>().SetBool("phase2", true);
         }
 
         if (health <= 0)
@@ -48,22 +52,22 @@ public class FinalBoss : MonoBehaviour
             Die();
         }
 
+        //damage Flash effect
+        _damageFlash.CallDamageFlash();
+
     }
 
     void Die()
     {
         bossMusic.Stop();
         victoryMusic.Play();
-        Instantiate(deathEffect);
         barrierLeft.SetActive(false);
         barrierRight.SetActive(false);
-        cam.vCam.Follow = player;
+
         playerMovement.speed = 0;
         cutscene.SetActive(true);
         Destroy(gameObject);
     }
-
-
 
 
     void Update()

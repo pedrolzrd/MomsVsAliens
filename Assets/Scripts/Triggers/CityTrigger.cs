@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CityTrigger : MonoBehaviour
 {
     [SerializeField] AudioSource LevelMusic;
     [SerializeField] AudioSource CaveMusic;
+
 
     void Start()
     {
@@ -29,6 +27,10 @@ public class CityTrigger : MonoBehaviour
 
             //Trocar Camera
             WaveManager.instance.SwitchCamera(WaveManager.instance.levelCam);
+
+       
+
+            Destroy(gameObject);
         }   
     }
 }
