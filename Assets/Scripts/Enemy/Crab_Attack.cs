@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Crab_Attack : MonoBehaviour
 {
-    public int attackDmg = 1;
+    [SerializeField]public int attackDmg = 3;
 
     public Vector3 attackOffset;
     public float attackRange = 1f;

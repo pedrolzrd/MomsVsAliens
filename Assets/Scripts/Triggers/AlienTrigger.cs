@@ -24,6 +24,8 @@ public class AlienTrigger : MonoBehaviour
             {
                 aliens[i].SetActive(true);
             }
+
+            Destroy(gameObject);
         }
     }
 }
