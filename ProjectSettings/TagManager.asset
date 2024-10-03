@@ -21,6 +21,7 @@ TagManager:
   - HealthBar
   - TupperwareBar
   - CharacterSelect
+  - ShotgunAmmo
   layers:
   - Default
   - TransparentFX

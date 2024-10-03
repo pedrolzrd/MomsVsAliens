@@ -35,6 +35,8 @@ public class PlayerShoot : MonoBehaviour
     public bool canShoot = false;
     public int ammoMetralhadora;
 
+    public int ammoShotgun;
+
     public RuntimeAnimatorController newController;
 
     [SerializeField]private bool pointingUP = false;
@@ -132,6 +134,14 @@ public class PlayerShoot : MonoBehaviour
                         animator.SetTrigger("isShooting");
                     }
 
+                    if (playerInput.actions["Fire"].triggered && ammoShotgun > 0 && ammoMetralhadora <= 0)
+                    {
+                        ShootShotgun();
+                        nextShoot = Time.time + 1f / fireRate;
+                        animator.SetTrigger("isShooting");
+                        ammoShotgun -= 1;
+                    }
+
 
                     if (firing && ammoMetralhadora > 0)
                     {
@@ -195,6 +205,14 @@ public class PlayerShoot : MonoBehaviour
         shootSound.Play();
     }
 
+    void ShootShotgun()
+    {
+        Instantiate(shoot, shootPoint.position, shootPoint.rotation = Quaternion.Euler(0, 0, 10));
+        Instantiate(shoot, shootPoint.position, shootPoint.rotation = Quaternion.Euler(0, 0, 0));
+        Instantiate(shoot, shootPoint.position, shootPoint.rotation = Quaternion.Euler(0, 0, -10));
+        shootSound.Play();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Weapon"))
@@ -205,6 +223,11 @@ public class PlayerShoot : MonoBehaviour
             animator = GetComponent<Animator>();
             
             Destroy(collision.gameObject);
+        }
+
+        if (collision.CompareTag("ShotgunAmmo"))
+        {
+            ammoShotgun = 20;
         }
     }
 
@@ -220,7 +243,7 @@ public class PlayerShoot : MonoBehaviour
         if (pointingUP == true)
         {
             shootPoint.localRotation = Quaternion.Euler(0f, 0f, 0f);
-            shootPoint.localPosition = new Vector3(0.265f, 0.144f, 0);
+            shootPoint.localPosition = new Vector3(0.25f, 0.11f, 0);
             pointingUP = false;
         }
     }

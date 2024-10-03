@@ -1,0 +1,82 @@
+{ "frames": {
+   "Maria do Socorro - Idle2 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 27, "h": 38 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 28, "y": 36, "w": 27, "h": 38 },
+    "sourceSize": { "w": 82, "h": 92 },
+    "duration": 100
+   },
+   "Maria do Socorro - Idle2 1.aseprite": {
+    "frame": { "x": 27, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 29, "y": 36, "w": 28, "h": 38 },
+    "sourceSize": { "w": 82, "h": 92 },
+    "duration": 100
+   },
+   "Maria do Socorro - Idle2 2.aseprite": {
+    "frame": { "x": 55, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 29, "y": 36, "w": 28, "h": 38 },
+    "sourceSize": { "w": 82, "h": 92 },
+    "duration": 100
+   },
+   "Maria do Socorro - Idle2 3.aseprite": {
+    "frame": { "x": 83, "y": 0, "w": 27, "h": 38 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 29, "y": 36, "w": 27, "h": 38 },
+    "sourceSize": { "w": 82, "h": 92 },
+    "duration": 100
+   },
+   "Maria do Socorro - Idle2 4.aseprite": {
+    "frame": { "x": 110, "y": 0, "w": 29, "h": 36 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 26, "y": 38, "w": 29, "h": 36 },
+    "sourceSize": { "w": 82, "h": 92 },
+    "duration": 100
+   },
+   "Maria do Socorro - Idle2 5.aseprite": {
+    "frame": { "x": 139, "y": 0, "w": 29, "h": 38 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 26, "y": 36, "w": 29, "h": 38 },
+    "sourceSize": { "w": 82, "h": 92 },
+    "duration": 100
+   },
+   "Maria do Socorro - Idle2 6.aseprite": {
+    "frame": { "x": 168, "y": 0, "w": 28, "h": 38 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 27, "y": 36, "w": 28, "h": 38 },
+    "sourceSize": { "w": 82, "h": 92 },
+    "duration": 100
+   },
+   "Maria do Socorro - Idle2 7.aseprite": {
+    "frame": { "x": 196, "y": 0, "w": 27, "h": 38 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 28, "y": 36, "w": 27, "h": 38 },
+    "sourceSize": { "w": 82, "h": 92 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.8.1-x64",
+  "image": "Maria do Socorro - Idle.png",
+  "format": "RGBA8888",
+  "size": { "w": 223, "h": 38 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
