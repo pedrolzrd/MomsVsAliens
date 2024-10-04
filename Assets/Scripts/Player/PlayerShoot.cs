@@ -228,6 +228,7 @@ public class PlayerShoot : MonoBehaviour
         if (collision.CompareTag("ShotgunAmmo"))
         {
             ammoShotgun = 20;
+            Destroy(collision.gameObject);
         }
     }
 
