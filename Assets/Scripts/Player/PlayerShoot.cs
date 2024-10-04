@@ -2,6 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] public GameObject shootEffect;
@@ -40,6 +42,11 @@ public class PlayerShoot : MonoBehaviour
     public RuntimeAnimatorController newController;
 
     [SerializeField]private bool pointingUP = false;
+
+
+    // Status Bar
+    public TextMeshProUGUI ammoCounter;
+
 
     //Point UP Logic
     private InputAction UpAimAction;
@@ -108,7 +115,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void OnButtonReleased(InputAction.CallbackContext context)
     {
-        //Volta o Sprite para a posição normal e chama o Metodo que falta o shootpoint pra frente.
+        //Volta o Sprite para a posiï¿½ï¿½o normal e chama o Metodo que falta o shootpoint pra frente.
         animator.SetBool("upAim", false);
         ChangeAimPositionFront();   
     }
@@ -164,10 +171,25 @@ public class PlayerShoot : MonoBehaviour
                         animator.SetTrigger("isShooting");
                         tupperware.LoseScoreTupperware(tupperware.maxScore);
                     }
+
+                    UpdateAmmoCounter();
                 }
             }
         }
 
+    }
+
+    public void UpdateAmmoCounter()
+    {
+        int currentAmmo = -1;
+
+        if(ammoMetralhadora > 0) {
+            currentAmmo = ammoMetralhadora;
+        }else if(ammoShotgun > 0) {
+            currentAmmo = ammoShotgun;
+        }
+
+        ammoCounter.text = currentAmmo == -1 ? "-" : currentAmmo.ToString();
     }
 
     void Shoot()
@@ -176,7 +198,6 @@ public class PlayerShoot : MonoBehaviour
         shootSound.Play();
         
         Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
-
     }
 
     void ShootMetralhadora()
