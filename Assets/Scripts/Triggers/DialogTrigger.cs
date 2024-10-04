@@ -10,7 +10,9 @@ public class DialogTrigger : MonoBehaviour
 
     [SerializeField] public float dialogTimer = 3f;
 
-    Coroutine corotinaDeEspera; 
+    Coroutine corotinaDeEspera;
+
+    [SerializeField] bool travarPlayer = true;
 
     void Start()
     {
@@ -36,13 +38,21 @@ public class DialogTrigger : MonoBehaviour
 
     IEnumerator EsperarDialogo()
     {
-        playerInput.DeactivateInput();
+        if (travarPlayer)
+        {
+            playerInput.DeactivateInput();
+        }
+        
 
         dialogBox.SetActive(true);
 
         yield return new WaitForSeconds(dialogTimer);
 
-        playerInput.ActivateInput();    
+        if (travarPlayer)
+        {
+            playerInput.ActivateInput();
+        }
+        
 
         Destroy(this);
         

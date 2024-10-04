@@ -54,16 +54,16 @@ public class FinalBoss : MonoBehaviour
 
         health -= damage;
 
-        if (health <= 60)
+        if (health <= 60 && health > 10)
         {
             //GetComponent<Animator>().SetBool("phase2", true); PARA O NEXT
             animator.SetBool("damaged", true);
             enemyShoot.enemyRateOfFire = 1f;
-            
-
-
-
+        }else if (health <= 10)
+        {
+            enemyShoot.enemyRateOfFire = 0.5f;
         }
+
 
         if (health <= 0)
         {
@@ -118,6 +118,14 @@ public class FinalBoss : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         Instantiate(explosionPrefab, transform.position + new Vector3(0.8f, 1, 0), Quaternion.identity);
+
+        yield return new WaitForSeconds(1f);
+
+        Instantiate(explosionPrefab, transform.position + new Vector3(0.4f, 1.2f, 0), Quaternion.identity);
+
+        yield return new WaitForSeconds(1f);
+
+        Instantiate(explosionPrefab, transform.position + new Vector3(0.8f, 0.4f, 0), Quaternion.identity);
 
     }
 }

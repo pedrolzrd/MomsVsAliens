@@ -206,7 +206,7 @@ public class PlayerShoot : MonoBehaviour
         if((shootPoint.rotation.z >= 0 && shootPoint.rotation.z < 10) || 
             (shootPoint.rotation.z >= 80 && shootPoint.rotation.z <= 100))
         {
-            shootPoint.Rotate(0, 0, spread);
+            //shootPoint.Rotate(0, 0, spread);
             Instantiate(shoot, shootPoint.position, shootPoint.rotation);
             shootSound.Play();
             Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
