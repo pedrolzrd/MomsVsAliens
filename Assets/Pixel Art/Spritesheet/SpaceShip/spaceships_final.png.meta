@@ -279,10 +279,10 @@ TextureImporter:
       name: spaceships_final_7
       rect:
         serializedVersion: 2
-        x: 1344
-        y: 96
-        width: 192
-        height: 96
+        x: 1372
+        y: 106
+        width: 116
+        height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

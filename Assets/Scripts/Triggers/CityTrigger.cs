@@ -5,7 +5,7 @@ public class CityTrigger : MonoBehaviour
     [SerializeField] AudioSource LevelMusic;
     [SerializeField] AudioSource CaveMusic;
 
-
+    [SerializeField] GameObject caveCollider;
     void Start()
     {
         
@@ -28,7 +28,8 @@ public class CityTrigger : MonoBehaviour
             //Trocar Camera
             WaveManager.instance.SwitchCamera(WaveManager.instance.levelCam);
 
-       
+            //Ativa Collider pro Player nao voltar a Caverna.
+            caveCollider.SetActive(true);
 
             Destroy(gameObject);
         }   
