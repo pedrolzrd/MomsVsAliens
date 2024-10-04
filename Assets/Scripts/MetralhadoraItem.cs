@@ -13,6 +13,8 @@ public class MetralhadoraItem : MonoBehaviour
     [SerializeField]
     int ammo;
 
+    [SerializeField] public AudioSource weaponCollectSound;
+
     private void Start()
     {
         playerShoot = FindAnyObjectByType<PlayerShoot>();
@@ -22,6 +24,7 @@ public class MetralhadoraItem : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            weaponCollectSound.Play();
             playerShoot.ammoMetralhadora += ammo;
             playerShoot.fireRate = newRate;
             playerShoot.shoot = newShoot;
