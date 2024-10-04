@@ -16,16 +16,6 @@ public class CharacterSelector : MonoBehaviour
         background = GetComponent<Image>();
     }
 
-    // public void OnPointerEnter(PointerEventData eventData)
-    // {
-    //     HoverInCharacter();
-    // }
-
-    // public void OnPointerExit(PointerEventData eventData)
-    // {
-    //     HoverOutCharacter();
-    // }
-
     public void HoverInCharacter()
     {
         if (!isSelected)
