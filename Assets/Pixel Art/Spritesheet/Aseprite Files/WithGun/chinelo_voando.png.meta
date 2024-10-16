@@ -169,11 +169,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 14
-        y: 3
+        y: 66
         width: 20
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -190,11 +190,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 56
-        y: 9
+        y: 72
         width: 33
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -211,11 +211,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 103
-        y: 14
+        y: 77
         width: 37
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -232,11 +232,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 154
-        y: 9
+        y: 72
         width: 33
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -253,11 +253,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 201
-        y: 9
+        y: 72
         width: 31
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -274,11 +274,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 244
-        y: 4
+        y: 67
         width: 39
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -295,11 +295,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 295
-        y: 4
+        y: 66
         width: 31
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,6 +307,153 @@ TextureImporter:
       bones: []
       spriteID: b45af8eda33628045a8b69130e8d6812
       internalID: -461254876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chinelo_voando_4
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 15
+        width: 20
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e98d4cc5be1e0b4bbd954b7f59a8670
+      internalID: 651618882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chinelo_voando_8
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 16
+        width: 33
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d697148f7a8d8c4b9c5b44abcbd2932
+      internalID: -1113383204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chinelo_voando_9
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 24
+        width: 37
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae673b25f175de142b7434d01bfbcd14
+      internalID: -606402594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chinelo_voando_10
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 18
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d40b1eff539744e8f64d30f3d08659
+      internalID: -1501259870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chinelo_voando_11
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 16
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef5b3485f531de45bf1ed1dbdf51035
+      internalID: 307777972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chinelo_voando_12
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 15
+        width: 39
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e4ace6f88e5af4dae6fe6b78f4b899
+      internalID: -918902204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chinelo_voando_13
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 17
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1adefebd787b83c45912d3e76b000f6c
+      internalID: -478293379
       vertices: []
       indices: 
       edges: []
@@ -324,12 +471,18 @@ TextureImporter:
     nameFileIdTable:
       chinelo_voando_0: -708588458
       chinelo_voando_1: 715561897
+      chinelo_voando_10: -1501259870
+      chinelo_voando_11: 307777972
+      chinelo_voando_12: -918902204
+      chinelo_voando_13: -478293379
       chinelo_voando_2: -1569942884
       chinelo_voando_3: 1842106949
       chinelo_voando_4: 651618882
       chinelo_voando_5: 606658051
       chinelo_voando_6: 1537792585
       chinelo_voando_7: -461254876
+      chinelo_voando_8: -1113383204
+      chinelo_voando_9: -606402594
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

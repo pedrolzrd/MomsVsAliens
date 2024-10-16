@@ -27,7 +27,7 @@ public class MetralhadoraItem : MonoBehaviour
             weaponCollectSound.Play();
             playerShoot.ammoMetralhadora += ammo;
             playerShoot.fireRate = newRate;
-            playerShoot.shoot = newShoot;
+            playerShoot.projectile = newShoot;
             Destroy(this.gameObject);   
         }
     }

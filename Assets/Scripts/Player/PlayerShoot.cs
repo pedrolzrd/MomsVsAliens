@@ -8,14 +8,23 @@ public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] public GameObject shootEffect;
 
-    [SerializeField] GameObject initialShoot;
-    [HideInInspector]
-    public GameObject shoot;
+    [SerializeField] GameObject initialProjectile;
+
+    [SerializeField] public GameObject projectile;
     [SerializeField] Transform shootPoint;
     [SerializeField] GameObject special;
     Animator animator;
     Tupperware tupperware;
     PlayerMovement playerMovement;
+
+    [SerializeField]GameObject shotgunProjectile;
+
+    //Point UP Logic
+    private InputAction UpAimAction;
+
+    private InputAction FireAction;
+
+    public RuntimeAnimatorController newController;
 
     [Header("Sons")]
     [SerializeField]public AudioSource shootSound;
@@ -35,11 +44,17 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] public PlayerInput playerInput;
 
     public bool canShoot = false;
-    public int ammoMetralhadora;
 
+    [SerializeField]
+    bool firing;
+
+    float shotCounter;
+    public float rateOfFire = 0.2f;
+
+    [Header("Munições")]
+    public int ammoMetralhadora;
     public int ammoShotgun;
 
-    public RuntimeAnimatorController newController;
 
     [SerializeField]private bool pointingUP = false;
 
@@ -48,17 +63,7 @@ public class PlayerShoot : MonoBehaviour
     public TextMeshProUGUI ammoCounter;
 
 
-    //Point UP Logic
-    private InputAction UpAimAction;
-
-    private InputAction FireAction;
-
-    [SerializeField]
-    bool firing;
-
-
-    float shotCounter;
-    public float rateOfFire = 0.2f;
+    
 
     private void Start()
     {
@@ -67,7 +72,7 @@ public class PlayerShoot : MonoBehaviour
         tupperware = GetComponent<Tupperware>();
         playerMovement = GetComponent<PlayerMovement>();
         fireRate = initialFireRate;
-        shoot = initialShoot;
+        projectile = initialProjectile;
     }
 
     private void OnEnable()
@@ -122,10 +127,9 @@ public class PlayerShoot : MonoBehaviour
 
     void Update()
     {    
-        if(ammoMetralhadora <= 0)
+        if(ammoShotgun <= 0 && ammoMetralhadora <= 0)
         {
-            fireRate = initialFireRate;
-            shoot = initialShoot;
+            projectile = initialProjectile;
         }
 
         if(!GameManager.isPaused)
@@ -134,7 +138,7 @@ public class PlayerShoot : MonoBehaviour
             {
                 if (canShoot)
                 {
-                    if (playerInput.actions["Fire"].triggered && ammoMetralhadora <= 0)
+                    if (playerInput.actions["Fire"].triggered && ammoMetralhadora <= 0 && ammoShotgun <= 0)
                     {
                         Shoot();
                         nextShoot = Time.time + 1f / fireRate;                        
@@ -194,7 +198,7 @@ public class PlayerShoot : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(shoot, shootPoint.position, shootPoint.rotation);
+        Instantiate(projectile, shootPoint.position, shootPoint.rotation);
         shootSound.Play();
         
         Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
@@ -207,13 +211,13 @@ public class PlayerShoot : MonoBehaviour
             (shootPoint.rotation.z >= 80 && shootPoint.rotation.z <= 100))
         {
             //shootPoint.Rotate(0, 0, spread);
-            Instantiate(shoot, shootPoint.position, shootPoint.rotation);
+            Instantiate(projectile, shootPoint.position, shootPoint.rotation);
             shootSound.Play();
             Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
             ammoMetralhadora -= 1;
         } else
         {
-            Instantiate(shoot, shootPoint.position, shootPoint.rotation);
+            Instantiate(projectile, shootPoint.position, shootPoint.rotation);
             shootSound.Play();
             Instantiate(shootEffect, shootPoint.position, shootPoint.rotation);
             ammoMetralhadora -= 1;
@@ -228,10 +232,18 @@ public class PlayerShoot : MonoBehaviour
 
     void ShootShotgun()
     {
-        Instantiate(shoot, shootPoint.position, shootPoint.rotation = Quaternion.Euler(0, 0, 10));
-        Instantiate(shoot, shootPoint.position, shootPoint.rotation = Quaternion.Euler(0, 0, 0));
-        Instantiate(shoot, shootPoint.position, shootPoint.rotation = Quaternion.Euler(0, 0, -10));
+        AddZRotationOffset(10.0f);
+        Instantiate(projectile, shootPoint.position, shootPoint.rotation);
+
+        AddZRotationOffset(-10.0f);
+        Instantiate(projectile, shootPoint.position, shootPoint.rotation);
+
+        AddZRotationOffset(-10.0f);
+        Instantiate(projectile, shootPoint.position, shootPoint.rotation);
         shootSound.Play();
+
+        AddZRotationOffset(10.0f);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -248,7 +260,9 @@ public class PlayerShoot : MonoBehaviour
 
         if (collision.CompareTag("ShotgunAmmo"))
         {
+            projectile = shotgunProjectile;
             ammoShotgun = 20;
+            ammoMetralhadora = 0;
             Destroy(collision.gameObject);
         }
     }
@@ -268,5 +282,18 @@ public class PlayerShoot : MonoBehaviour
             shootPoint.localPosition = new Vector3(0.25f, 0.11f, 0);
             pointingUP = false;
         }
+    }
+
+
+    public void AddZRotationOffset(float offset)
+    {
+    // Pega a rotação local atual do objeto em ângulos de Euler
+    Vector3 currentShootpointRotation = shootPoint.localEulerAngles;
+
+        // Adiciona o offset na rotação do eixo Z local
+        currentShootpointRotation.z += offset;
+
+        // Atualiza a rotação local do objeto
+        shootPoint.localEulerAngles = currentShootpointRotation;
     }
 }
