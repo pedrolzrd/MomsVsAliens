@@ -32,6 +32,8 @@ public class Tupperware : MonoBehaviour
         specialFullImage = specialFull.GetComponent<Image>();
 
         tupperwareBars = GameObject.FindGameObjectsWithTag("TupperwareBar");
+
+        System.Array.Sort(tupperwareBars, (x, y) => x.name.CompareTo(y.name));
         for (int i = 0; i < (int)maxScore; i++)
         {
             tupperwareBarStates.Add(tupperwareBars[i].GetComponent<BarState>());
