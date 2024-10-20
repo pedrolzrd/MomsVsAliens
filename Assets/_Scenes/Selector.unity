@@ -225,7 +225,7 @@ RectTransform:
   m_GameObject: {fileID: 65640081}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1649914860}
@@ -742,9 +742,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a3629c9713fa54897c63d26f19baf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgNormal: {fileID: 21300000, guid: 61b25fae5c735d9419a366618f641073, type: 3}
-  bgHover: {fileID: 21300000, guid: c911baed2d838894bb828c3a788e7ca8, type: 3}
-  bgSelected: {fileID: 21300000, guid: 3ad6dcbc45d153349b2e648c91021b64, type: 3}
+  bgNormal: {fileID: 21300000, guid: f88603163fb48db43a59128d86bd4199, type: 3}
+  bgHover: {fileID: 21300000, guid: 0e398d4ef01211343848834ed809b8b6, type: 3}
+  bgSelected: {fileID: 21300000, guid: 0e398d4ef01211343848834ed809b8b6, type: 3}
 --- !u!114 &314517669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,7 +765,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 61b25fae5c735d9419a366618f641073, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f88603163fb48db43a59128d86bd4199, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1521,7 +1521,7 @@ RectTransform:
   m_GameObject: {fileID: 814934146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1733218614}
@@ -1820,7 +1820,7 @@ RectTransform:
   m_GameObject: {fileID: 902698125}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 314517665}
@@ -2358,9 +2358,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a3629c9713fa54897c63d26f19baf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgNormal: {fileID: 21300000, guid: 61b25fae5c735d9419a366618f641073, type: 3}
-  bgHover: {fileID: 21300000, guid: c911baed2d838894bb828c3a788e7ca8, type: 3}
-  bgSelected: {fileID: 21300000, guid: 3ad6dcbc45d153349b2e648c91021b64, type: 3}
+  bgNormal: {fileID: 21300000, guid: d36a52355f5ee2944811d1ac979906c9, type: 3}
+  bgHover: {fileID: 21300000, guid: 1588438750391db4fafac408e0fb3d25, type: 3}
+  bgSelected: {fileID: 21300000, guid: 1588438750391db4fafac408e0fb3d25, type: 3}
 --- !u!114 &1294328197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2381,7 +2381,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 61b25fae5c735d9419a366618f641073, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d36a52355f5ee2944811d1ac979906c9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3231,9 +3231,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a3629c9713fa54897c63d26f19baf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgNormal: {fileID: 21300000, guid: 61b25fae5c735d9419a366618f641073, type: 3}
-  bgHover: {fileID: 21300000, guid: c911baed2d838894bb828c3a788e7ca8, type: 3}
-  bgSelected: {fileID: 21300000, guid: 3ad6dcbc45d153349b2e648c91021b64, type: 3}
+  bgNormal: {fileID: 21300000, guid: 6d8e1f92819b028448d294552bf5760b, type: 3}
+  bgHover: {fileID: 21300000, guid: be5f45b82e394bf41a8d90cbbba77b44, type: 3}
+  bgSelected: {fileID: 21300000, guid: be5f45b82e394bf41a8d90cbbba77b44, type: 3}
 --- !u!114 &1649914864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3254,7 +3254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 61b25fae5c735d9419a366618f641073, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d8e1f92819b028448d294552bf5760b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3396,9 +3396,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a3629c9713fa54897c63d26f19baf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgNormal: {fileID: 21300000, guid: 61b25fae5c735d9419a366618f641073, type: 3}
-  bgHover: {fileID: 21300000, guid: c911baed2d838894bb828c3a788e7ca8, type: 3}
-  bgSelected: {fileID: 21300000, guid: 3ad6dcbc45d153349b2e648c91021b64, type: 3}
+  bgNormal: {fileID: 21300000, guid: 9301ddd44951f6e4e8cace4d26aa4882, type: 3}
+  bgHover: {fileID: 21300000, guid: 1f7216d4d3d06fa4fb61bd5e21808344, type: 3}
+  bgSelected: {fileID: 21300000, guid: 1f7216d4d3d06fa4fb61bd5e21808344, type: 3}
 --- !u!114 &1733218618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3419,7 +3419,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 61b25fae5c735d9419a366618f641073, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9301ddd44951f6e4e8cace4d26aa4882, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3455,7 +3455,7 @@ RectTransform:
   m_GameObject: {fileID: 1784230196}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1294328193}
@@ -4561,10 +4561,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootEffect: {fileID: 0}
-  initialShoot: {fileID: 0}
-  shoot: {fileID: 3445560629639608594, guid: 032981f5277c51b45814b7b559874db5, type: 3}
+  initialProjectile: {fileID: 0}
+  projectile: {fileID: 0}
   shootPoint: {fileID: 8598449914505647219}
   special: {fileID: 0}
+  shotgunProjectile: {fileID: 0}
+  newController: {fileID: 0}
   shootSound: {fileID: 0}
   weaponCollectSound: {fileID: 0}
   initialFireRate: 0
@@ -4573,12 +4575,12 @@ MonoBehaviour:
   spreadNegative: 0
   playerInput: {fileID: 0}
   canShoot: 0
-  ammoMetralhadora: 0
-  ammoShotgun: 0
-  newController: {fileID: 0}
-  pointingUP: 0
   firing: 0
   rateOfFire: 0.2
+  ammoMetralhadora: 0
+  ammoShotgun: 0
+  pointingUP: 0
+  ammoCounter: {fileID: 0}
 --- !u!114 &8598449915107415891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4843,10 +4845,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootEffect: {fileID: 0}
-  initialShoot: {fileID: 0}
-  shoot: {fileID: 3445560629639608594, guid: 032981f5277c51b45814b7b559874db5, type: 3}
+  initialProjectile: {fileID: 0}
+  projectile: {fileID: 0}
   shootPoint: {fileID: 8598449914467918549}
   special: {fileID: 0}
+  shotgunProjectile: {fileID: 0}
+  newController: {fileID: 0}
   shootSound: {fileID: 0}
   weaponCollectSound: {fileID: 0}
   initialFireRate: 0
@@ -4855,12 +4859,12 @@ MonoBehaviour:
   spreadNegative: 0
   playerInput: {fileID: 0}
   canShoot: 0
-  ammoMetralhadora: 0
-  ammoShotgun: 0
-  newController: {fileID: 0}
-  pointingUP: 0
   firing: 0
   rateOfFire: 0.2
+  ammoMetralhadora: 0
+  ammoShotgun: 0
+  pointingUP: 0
+  ammoCounter: {fileID: 0}
 --- !u!114 &8598449915212259829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5087,10 +5091,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootEffect: {fileID: 0}
-  initialShoot: {fileID: 0}
-  shoot: {fileID: 3445560629639608594, guid: 032981f5277c51b45814b7b559874db5, type: 3}
+  initialProjectile: {fileID: 0}
+  projectile: {fileID: 0}
   shootPoint: {fileID: 8598449914728462727}
   special: {fileID: 0}
+  shotgunProjectile: {fileID: 0}
+  newController: {fileID: 0}
   shootSound: {fileID: 0}
   weaponCollectSound: {fileID: 0}
   initialFireRate: 0
@@ -5099,12 +5105,12 @@ MonoBehaviour:
   spreadNegative: 0
   playerInput: {fileID: 0}
   canShoot: 0
-  ammoMetralhadora: 0
-  ammoShotgun: 0
-  newController: {fileID: 0}
-  pointingUP: 0
   firing: 0
   rateOfFire: 0.2
+  ammoMetralhadora: 0
+  ammoShotgun: 0
+  pointingUP: 0
+  ammoCounter: {fileID: 0}
 --- !u!114 &8598449915486501543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5339,10 +5345,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootEffect: {fileID: 0}
-  initialShoot: {fileID: 0}
-  shoot: {fileID: 3445560629639608594, guid: 032981f5277c51b45814b7b559874db5, type: 3}
+  initialProjectile: {fileID: 0}
+  projectile: {fileID: 0}
   shootPoint: {fileID: 8598449916425998940}
   special: {fileID: 0}
+  shotgunProjectile: {fileID: 0}
+  newController: {fileID: 0}
   shootSound: {fileID: 0}
   weaponCollectSound: {fileID: 0}
   initialFireRate: 0
@@ -5351,12 +5359,12 @@ MonoBehaviour:
   spreadNegative: 0
   playerInput: {fileID: 0}
   canShoot: 0
-  ammoMetralhadora: 0
-  ammoShotgun: 0
-  newController: {fileID: 0}
-  pointingUP: 0
   firing: 0
   rateOfFire: 0.2
+  ammoMetralhadora: 0
+  ammoShotgun: 0
+  pointingUP: 0
+  ammoCounter: {fileID: 0}
 --- !u!114 &8598449915936428415
 MonoBehaviour:
   m_ObjectHideFlags: 0
