@@ -21,7 +21,7 @@ public class Tupperware : MonoBehaviour
 
     // Blink
     private bool isBlinking = false;
-    private float blinkDuration = 0.3f;
+    private float blinkDuration = 0.1f;
 
     void Awake()
     {
@@ -125,7 +125,7 @@ public class Tupperware : MonoBehaviour
         while (score == maxScore)
         {
             Color tempColor = specialFullImage.color;
-            tempColor.a = 0.9f;
+            tempColor.a = 0.85f;
             specialFullImage.color = tempColor;
 
             yield return new WaitForSeconds(blinkDuration);
