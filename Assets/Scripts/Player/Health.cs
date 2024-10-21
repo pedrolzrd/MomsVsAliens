@@ -63,6 +63,9 @@ public class Health : MonoBehaviour
         healthBarStates = new List<BarState>();
         healthBarImages = new List<Image>();
         healthBars = GameObject.FindGameObjectsWithTag("HealthBar");
+
+        System.Array.Sort(healthBars, (x, y) => x.name.CompareTo(y.name));
+
         for (int i = 0; i < (int)maxHealth; i++)
         {
             healthBarStates.Add(healthBars[i].GetComponent<BarState>());
