@@ -26,6 +26,8 @@ public class PlayerShoot : MonoBehaviour
 
     public RuntimeAnimatorController newController;
 
+    [SerializeField] RuntimeAnimatorController[] weaponControllers;
+
     [Header("Sons")]
     [SerializeField]public AudioSource shootSound;
     [SerializeField]public AudioSource weaponCollectSound;
@@ -61,9 +63,10 @@ public class PlayerShoot : MonoBehaviour
 
     // Status Bar
     public TextMeshProUGUI ammoCounter;
-
-
     
+    int selectedCharacter;
+
+
 
     private void Start()
     {
@@ -73,6 +76,8 @@ public class PlayerShoot : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         fireRate = initialFireRate;
         projectile = initialProjectile;
+
+        selectedCharacter = PlayerPrefs.GetInt("selectedChar");
     }
 
     private void OnEnable()
@@ -250,6 +255,13 @@ public class PlayerShoot : MonoBehaviour
     {
         if (collision.CompareTag("Weapon"))
         {
+            switch (selectedCharacter)
+            {
+                case 2:
+                    animator.runtimeAnimatorController = weaponControllers[2];
+
+                        break;
+            }
             weaponCollectSound.Play();
             canShoot = true;
             animator.runtimeAnimatorController = newController;
