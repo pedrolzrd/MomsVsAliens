@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -127,7 +127,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Maria do Socorro - Idle2-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 36
+        height: 38
+      alignment: 9
+      pivot: {x: 0.38945708, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8a0a2828f3872d4f899e1de735a54e1
+      internalID: -86422296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maria do Socorro - Idle2-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 0
+        width: 36
+        height: 38
+      alignment: 9
+      pivot: {x: 0.3643377, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76d42e3a667cabe4f9cb4bbb9c16a7fc
+      internalID: -397198809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maria do Socorro - Idle2-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 0
+        width: 36
+        height: 38
+      alignment: 9
+      pivot: {x: 0.36182553, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c69926a7099dba409ac78e9c27afa13
+      internalID: 1982562310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maria do Socorro - Idle2-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 0
+        width: 36
+        height: 38
+      alignment: 9
+      pivot: {x: 0.36433792, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb25f46163fd8fd4ba0ae3413a6f9e6c
+      internalID: 927433766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maria do Socorro - Idle2-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 36
+        height: 38
+      alignment: 9
+      pivot: {x: 0.44975492, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ad1c9c35ee5a24fa5e1653d2d0016a
+      internalID: -1001085369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maria do Socorro - Idle2-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 36
+        height: 38
+      alignment: 9
+      pivot: {x: 0.4497545, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4750f64f0b5c87145ae90ff013e1453c
+      internalID: 1990776796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maria do Socorro - Idle2-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 0
+        width: 36
+        height: 38
+      alignment: 9
+      pivot: {x: 0.41960737, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9621c73ca6b79fd4e9c00363d53c1aee
+      internalID: -1647674348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maria do Socorro - Idle2-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 0
+        width: 36
+        height: 38
+      alignment: 9
+      pivot: {x: 0.38946024, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fb8425e0e1284e40899bfe4ad6b88bc
+      internalID: -390605214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +306,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Maria do Socorro - Idle2-sheet_0: -86422296
+      Maria do Socorro - Idle2-sheet_1: -397198809
+      Maria do Socorro - Idle2-sheet_2: 1982562310
+      Maria do Socorro - Idle2-sheet_3: 927433766
+      Maria do Socorro - Idle2-sheet_4: -1001085369
+      Maria do Socorro - Idle2-sheet_5: 1990776796
+      Maria do Socorro - Idle2-sheet_6: -1647674348
+      Maria do Socorro - Idle2-sheet_7: -390605214
+      Maria do Socorro - Idle2-sheet_8: 237534075
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

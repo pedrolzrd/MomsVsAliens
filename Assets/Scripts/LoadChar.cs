@@ -17,4 +17,9 @@ public class LoadChar : MonoBehaviour
         playerAnimator.runtimeAnimatorController = CharAnimator;
         //playerAnimator = GetComponent<Animator>();
     }
+
+    private void Update()
+    {
+        Debug.Log(PlayerPrefs.GetInt("selectedChar"));
+    }
 }
