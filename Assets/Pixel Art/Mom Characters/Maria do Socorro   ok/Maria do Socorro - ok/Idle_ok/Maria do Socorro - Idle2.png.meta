@@ -132,18 +132,18 @@ TextureImporter:
       name: Maria do Socorro - Idle2_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 0
-        width: 29
-        height: 38
-      alignment: 9
-      pivot: {x: 0.5301636, y: 0}
+        x: 0
+        y: 6
+        width: 48
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94e5ce633e4ba7549a1d2e3a063a0f0c
+      spriteID: b4aaf3d0db32b114aa13b5e132549230
       internalID: -581444373
       vertices: []
       indices: 
@@ -153,10 +153,10 @@ TextureImporter:
       name: Maria do Socorro - Idle2_1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 0
-        width: 29
-        height: 38
+        x: 48
+        y: 6
+        width: 48
+        height: 42
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,7 +164,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb7207f40fa170043a89f68d433ff5a2
+      spriteID: 68c9dd9ede72e714ea8906cd5f62bf64
       internalID: -363411628
       vertices: []
       indices: 
@@ -174,10 +174,10 @@ TextureImporter:
       name: Maria do Socorro - Idle2_2
       rect:
         serializedVersion: 2
-        x: 67
-        y: 0
-        width: 29
-        height: 38
+        x: 96
+        y: 6
+        width: 48
+        height: 42
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,7 +185,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45d81ea6cbe62db448d520a3ed3116e4
+      spriteID: 880e2e2f482b34840a2fddeea91ee1b2
       internalID: 746603698
       vertices: []
       indices: 
@@ -195,10 +195,10 @@ TextureImporter:
       name: Maria do Socorro - Idle2_3
       rect:
         serializedVersion: 2
-        x: 99
-        y: 0
-        width: 29
-        height: 38
+        x: 144
+        y: 6
+        width: 48
+        height: 42
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,7 +206,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2eeaad2322379f747a695c9f9a8ce3cb
+      spriteID: 02b73daae5b03d244bb6931c2cf7fae6
       internalID: 1227113082
       vertices: []
       indices: 
@@ -216,18 +216,18 @@ TextureImporter:
       name: Maria do Socorro - Idle2_4
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 29
-        height: 38
-      alignment: 9
-      pivot: {x: 0.59977144, y: 0}
+        x: 192
+        y: 6
+        width: 48
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 850120e80e6e60c4a9715827214e13bb
+      spriteID: 19ed10fe07ce08e4ca3741ca5f06cdb3
       internalID: 783869608
       vertices: []
       indices: 
@@ -237,18 +237,18 @@ TextureImporter:
       name: Maria do Socorro - Idle2_5
       rect:
         serializedVersion: 2
-        x: 160
-        y: 0
-        width: 29
-        height: 38
-      alignment: 9
-      pivot: {x: 0.6067321, y: 0}
+        x: 240
+        y: 6
+        width: 48
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 409ae93205e9cf7489e082cdaa441913
+      spriteID: 6c1d739218464c3488997906fa0f38cb
       internalID: 1320535990
       vertices: []
       indices: 
@@ -258,18 +258,18 @@ TextureImporter:
       name: Maria do Socorro - Idle2_6
       rect:
         serializedVersion: 2
-        x: 193
-        y: 0
-        width: 29
-        height: 38
-      alignment: 9
-      pivot: {x: 0.56728756, y: 0}
+        x: 288
+        y: 6
+        width: 48
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b10d516d4fd98a244b0fd431e3498086
+      spriteID: 5d69470558ce40a448f799c5c15a86f6
       internalID: 2111718369
       vertices: []
       indices: 
@@ -279,18 +279,18 @@ TextureImporter:
       name: Maria do Socorro - Idle2_7
       rect:
         serializedVersion: 2
-        x: 226
-        y: 0
-        width: 29
-        height: 38
-      alignment: 9
-      pivot: {x: 0.52784306, y: -0.0017707322}
+        x: 336
+        y: 6
+        width: 48
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26ece89e7dac12247a315b64db0f6209
+      spriteID: 320cc023f4bee3a44887275eb4306f6a
       internalID: -12750549
       vertices: []
       indices: 
