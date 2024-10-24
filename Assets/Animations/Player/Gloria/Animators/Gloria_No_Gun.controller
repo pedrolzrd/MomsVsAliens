@@ -85,7 +85,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Maria_Idle
+  m_Name: Gloria_Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -100,7 +100,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ac031db1e1a1c3e46853a565db90f102, type: 2}
+  m_Motion: {fileID: 7400000, guid: e5549c3c060949641aa80243eab0805d, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -163,7 +163,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Maria_Run
+  m_Name: Gloria_Run
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -177,7 +177,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7bcde6a020c12fb4793f5d2bf19474a8, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4690f97e64d1bf74ba606d30f0312584, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -189,7 +189,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MariadoSocorro_No_Gun
+  m_Name: Gloria_No_Gun
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isRunning
@@ -244,7 +244,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 64f88fab08b9a424e9d65fb9338049e3, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9b5d7451d2f64d14aa296a0b4e8fc20c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

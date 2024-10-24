@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -127,7 +127,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Gloria Santos - Idle2x_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 6
+        width: 27
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a87d4ce7c362d94bbef4944cd92dcd6
+      internalID: -781110774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gloria Santos - Idle2x_1
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 6
+        width: 27
+        height: 33
+      alignment: 9
+      pivot: {x: 0.48378894, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc57908b64bd6549835e6d8b4e4fa4d
+      internalID: -667132088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gloria Santos - Idle2x_2
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 6
+        width: 28
+        height: 33
+      alignment: 9
+      pivot: {x: 0.46774784, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 465abbad7299af24e8998af1caf2a32b
+      internalID: -1598263831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gloria Santos - Idle2x_3
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 6
+        width: 27
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38abd5f541bed1a4486ad28246d9667c
+      internalID: -1141051501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gloria Santos - Idle2x_4
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 6
+        width: 27
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ccbc761de1a4a44c94dcaeb760f3dc7
+      internalID: 1436071522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gloria Santos - Idle2x_5
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 6
+        width: 26
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef17fc06a5488ea40a27c22f3fa0b33f
+      internalID: -830304817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gloria Santos - Idle2x_6
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 6
+        width: 26
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8cf05f52c258b7499a329d0c8b7e964
+      internalID: 343429564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gloria Santos - Idle2x_7
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 6
+        width: 27
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2556a684d8e6a404ea23fd502e1c7bbd
+      internalID: -1231223757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +306,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gloria Santos - Idle2x_0: -781110774
+      Gloria Santos - Idle2x_1: -667132088
+      Gloria Santos - Idle2x_2: -1598263831
+      Gloria Santos - Idle2x_3: -1141051501
+      Gloria Santos - Idle2x_4: 1436071522
+      Gloria Santos - Idle2x_5: -830304817
+      Gloria Santos - Idle2x_6: 343429564
+      Gloria Santos - Idle2x_7: -1231223757
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

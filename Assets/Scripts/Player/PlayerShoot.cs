@@ -257,14 +257,22 @@ public class PlayerShoot : MonoBehaviour
         {
             switch (selectedCharacter)
             {
+                case 0:
+                    animator.runtimeAnimatorController = weaponControllers[0];
+
+                    break;
+                case 1:
+                    animator.runtimeAnimatorController = weaponControllers[1];
+
+                    break;
                 case 2:
                     animator.runtimeAnimatorController = weaponControllers[2];
 
-                        break;
+                    break;
             }
             weaponCollectSound.Play();
             canShoot = true;
-            animator.runtimeAnimatorController = newController;
+            //animator.runtimeAnimatorController = newController;
             animator = GetComponent<Animator>();
             
             Destroy(collision.gameObject);
