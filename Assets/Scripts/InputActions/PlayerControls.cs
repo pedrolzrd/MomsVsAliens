@@ -152,8 +152,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Gamepad D-Pad"",
-                    ""id"": ""91b54623-fa07-4d6e-928a-daace5fe86c1"",
+                    ""name"": ""D-Pad"",
+                    ""id"": ""9713070e-ac66-4311-9ee5-855b9e746cb0"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -163,8 +163,30 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
+                    ""name"": ""up"",
+                    ""id"": ""e9b4203f-9267-444b-9052-c37fabeb1951"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""c440c35b-fb2c-4bc6-b0af-2124ac797fd3"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": ""left"",
-                    ""id"": ""78fc4695-9fae-4118-9c8b-192d8ec5484d"",
+                    ""id"": ""441c3c94-f783-4782-af9c-a6fadaffc90f"",
                     ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -175,7 +197,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""977c7ccc-6517-4e33-bb10-006fe1405c55"",
+                    ""id"": ""cef032c0-0d1f-4484-9345-ee363c1a56f2"",
                     ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
