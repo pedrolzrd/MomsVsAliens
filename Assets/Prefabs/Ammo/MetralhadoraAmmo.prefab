@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newShoot: {fileID: 3149752523426650186, guid: ebc5812a0e4e2bc43985fb7114b26623, type: 3}
-  newRate: 8
+  newRate: 6
   ammo: 80
   weaponCollectSound: {fileID: 0}
 --- !u!58 &2728884304095445351
