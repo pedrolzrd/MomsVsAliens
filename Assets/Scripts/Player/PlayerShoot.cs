@@ -281,6 +281,7 @@ public class PlayerShoot : MonoBehaviour
         if (collision.CompareTag("ShotgunAmmo"))
         {
             projectile = shotgunProjectile;
+            weaponCollectSound.Play();
             ammoShotgun = 20;
             ammoMetralhadora = 0;
             Destroy(collision.gameObject);

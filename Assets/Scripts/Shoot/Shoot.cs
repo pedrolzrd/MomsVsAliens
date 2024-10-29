@@ -65,6 +65,12 @@ public class Shoot : MonoBehaviour
             Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
+
+        if (collision.gameObject.CompareTag("spaceship_sprite"))
+        {
+            Instantiate(impactEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
         
     }
 
