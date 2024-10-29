@@ -15,11 +15,14 @@ public class BossHealth : MonoBehaviour
 
     public GameObject deadSpriteMiniBoss;
 
+    private DamageFlash _damageFlash;
+
     Transform player;
     void Start()
     {
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        _damageFlash = GetComponent<DamageFlash>();
     }
 
     void Update()
@@ -45,6 +48,9 @@ public class BossHealth : MonoBehaviour
         {
             Die();
         }
+
+        //damage Flash effect
+        _damageFlash.CallDamageFlash();
 
     }
 

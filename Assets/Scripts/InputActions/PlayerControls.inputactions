@@ -119,6 +119,28 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "up",
+                    "id": "ba43941f-0c86-41fb-a37b-faf4a408b40c",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "69e34ac5-72aa-4595-b20e-c671fdb7522a",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "right",
                     "id": "080f5a45-a746-4f00-8d68-942a85aeeb0f",
                     "path": "<Keyboard>/rightArrow",
@@ -209,7 +231,7 @@
                 {
                     "name": "",
                     "id": "160aa1e2-d927-420c-b026-e32ba81bacd1",
-                    "path": "<Keyboard>/ctrl",
+                    "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -276,6 +298,17 @@
                     "name": "",
                     "id": "e276defe-caa1-45c8-ab12-773f9675faa4",
                     "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpecialShot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "761df8c1-192f-485a-9777-ce5ab6ce36be",
+                    "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

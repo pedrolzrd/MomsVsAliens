@@ -22,6 +22,7 @@ TagManager:
   - TupperwareBar
   - CharacterSelect
   - ShotgunAmmo
+  - spaceship_sprite
   layers:
   - Default
   - TransparentFX
