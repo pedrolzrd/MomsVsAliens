@@ -3,18 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class Controller : MonoBehaviour
 {
-    //Music musicObject;
-
-
-    private void Awake()
+    private void Update()
     {
-        //musicObject = GameObject.FindGameObjectWithTag("Music").GetComponent<Music>();
-        
+        if(Input.GetKey(KeyCode.Alpha0))
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
 
     public void GameOver()
     {
-        //Destroy(musicObject);
         SceneManager.LoadScene("GameOver");
     }
 
@@ -22,8 +20,9 @@ public class Controller : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+    
+    public void GoToMenu()
 
-    public void MainMenu()
     {
         SceneManager.LoadScene("Menu");
     }
