@@ -20,6 +20,6 @@ public class LoadChar : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(PlayerPrefs.GetInt("selectedChar"));
+        //Debug.Log(PlayerPrefs.GetInt("selectedChar"));
     }
 }
