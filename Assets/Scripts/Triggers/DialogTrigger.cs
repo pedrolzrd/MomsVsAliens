@@ -15,9 +15,13 @@ public class DialogTrigger : MonoBehaviour
 
     [SerializeField] bool travarPlayer = true;
 
+    [SerializeField] bool destroyAfter = true;
+
     [SerializeField]GameObject[] DialogImages;
 
     int selectedCharacter;
+
+    
 
     void Start()
     {
@@ -73,9 +77,14 @@ public class DialogTrigger : MonoBehaviour
         {
             playerInput.ActivateInput();
         }
-        
 
-        Destroy(this);
+        dialogBox.SetActive(false);
+
+        if (destroyAfter)
+        {
+            Destroy(this);
+        }
+        
         
     }
 }
