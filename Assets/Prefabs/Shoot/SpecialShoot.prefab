@@ -176,7 +176,7 @@ MonoBehaviour:
   _rb: {fileID: 5394505240736711281}
   _animator: {fileID: 5394505240736711283}
   _speed: 20
-  damage: 25
+  damage: 10
   enemyDeathEffect: {fileID: 4338841011067334946, guid: 1d907128788f1994aa5d9b9bb5ba441d, type: 3}
   impactEffect: {fileID: 1033679692533729153, guid: d3ddc6dda58fd614bb1842d116acd70b, type: 3}
 --- !u!82 &-4414680865091784357
