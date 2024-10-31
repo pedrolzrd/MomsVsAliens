@@ -56,6 +56,12 @@ public class GameManager : MonoBehaviour
         isPaused = false;
     }
 
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+        isPaused = false;
+    }
+
     public void QuitGame()
     {
 #if UNITY_EDITOR
