@@ -24,7 +24,7 @@ public class HealItem : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (playerHealth.currentHealth < playerHealth.maxHealth)
+            if (playerHealth.currentHealth <= playerHealth.maxHealth)
             {
                 playerHealth.RecoverHealthAndLife();
                 Instantiate(healAnimation, transform.position, Quaternion.identity);

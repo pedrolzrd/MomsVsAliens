@@ -186,7 +186,7 @@ public class Health : MonoBehaviour
     {
         currentHealth = maxHealth;
 
-        if(currentLife <= maxLife) {
+        if(currentLife < maxLife) {
             currentLife += 1;
         }
 
