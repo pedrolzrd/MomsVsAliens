@@ -9,6 +9,8 @@ public class WaveTrigger : MonoBehaviour
     [SerializeField] GameObject rightSpawner, leftSpawner;
     [SerializeField] Animator spaceShip;
 
+    [SerializeField] Animator alienToDesactivate;
+
     void Start()
     {
         
@@ -35,7 +37,15 @@ public class WaveTrigger : MonoBehaviour
                 //Ativar os Colliders para o player nao sair da tela.
                 WaveManager.instance.AtivarColliders();
 
-                //
+                //Verifica se o Alien anterior foi morto para ele nao ficar atirando de fora da tela.
+                if(alienToDesactivate != null)
+                {
+                    alienToDesactivate.Play("JumpOff");
+                }
+                else
+                {
+                    print("morto já");
+                }
             }
 
             //Dar play na animação de Surgir da Nave.

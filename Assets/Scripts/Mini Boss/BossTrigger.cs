@@ -20,6 +20,7 @@ public class BossTrigger : MonoBehaviour
 
     [SerializeField] Animator spaceShip;
 
+    [SerializeField] Animator alienToDesactivate;
 
     void Start()
     {
@@ -46,6 +47,17 @@ public class BossTrigger : MonoBehaviour
 
             //Ativa a animação da Nave.
             spaceShip.Play("spaceship_descend");
+
+            //
+            if (alienToDesactivate != null)
+            {
+                alienToDesactivate.Play("LeaveScreen");
+            }
+            else
+            {
+                print("morto já");
+            }
+           
 
             //Destroi esse Trigger
             Destroy(gameObject);

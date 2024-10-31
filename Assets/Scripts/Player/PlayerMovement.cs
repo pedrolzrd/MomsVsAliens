@@ -16,6 +16,9 @@ public class PlayerMovement : MonoBehaviour
     public bool isJumping;
     public bool isFacingRight = true;
 
+    private float coyoteTime = 0.2f;
+    private float coyoteTimeCounter;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
